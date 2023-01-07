@@ -1,0 +1,47 @@
+.logo-container{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.part1{
+    position: absolute;
+    top: 4%;
+    left: 0%;
+}
+.part2{
+    transform: rotateZ(10deg);
+    position: absolute;
+    left: 5%;
+    top: 10%;
+}
+.part3{
+    position: absolute;
+    left: 6%;
+    top: 19%;
+}
+.popa{
+    width: 70px;
+    height: 70px;
+    border-radius: 100% 100% 100% 50% ;
+    background-color: #182889;
+    transform: rotateZ(3deg);
+}
+
+.middle{
+    width: 100px;
+    height: 100px;
+   outline: 4px solid white;
+    border-radius: 100% 100% 100% 0 ;
+    background-color: red;
+    transform: skew(-9deg, -9deg);
+}
+
+.down{
+    width: 130px;
+    height: 80px;
+    background: #385BA0;
+    transform: skew(-20deg);
+   outline: 4px solid white;
+    border-radius: 100% 0 10px 0 ;
+}
+            

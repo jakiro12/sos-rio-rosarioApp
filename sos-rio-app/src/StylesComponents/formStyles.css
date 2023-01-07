@@ -1,0 +1,68 @@
+.container{
+    height: 80%;
+    width: min(450px,90%);
+    display: grid;
+    color: white;
+    background:  #0855A0 ;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: 1fr;
+    }
+
+.input-content{
+    height: 100%;
+    width: 76%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;    
+}
+.name-alert{
+    --activation:hidden;
+}
+.name-alert::after{
+    visibility: var(--activation);
+    content: 'invalid name';
+    width: 50px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
+.input-content > label{
+    outline: 2px solid black;
+    margin-inline-end: auto;
+    width: 99%;
+    position: relative;
+    padding-bottom: 1%;
+}
+.personal-data{
+    height: 30px;
+    width: 100%;
+    border: white;
+    border-radius: 5px;
+    text-indent: 2%;
+    position:relative;
+}
+.personal-data:focus{
+    outline: none;
+    text-indent: 2%;
+}
+
+.send-data{
+    height: 100%;
+    width: 50px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: red;
+}
+.boat-start{
+    display:  flex;
+    justify-content: space-between;
+    height: 40%;
+    margin: auto;
+    border: 2px solid black;
+    width: 76%;
+}
