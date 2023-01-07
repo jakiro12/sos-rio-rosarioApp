@@ -5,7 +5,7 @@ import price from '../svgLogos/price.svg'
 export default function Paradores(){
     return(
         <div className='container-spots'>
-            <h3>Paradores</h3>
+            <h2>Paradores</h2>
             <div className='options-selected'>
             <select name="format" >
             <option value="value1" >Value 1</option> 

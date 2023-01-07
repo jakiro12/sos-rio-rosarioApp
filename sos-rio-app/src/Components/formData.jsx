@@ -17,25 +17,29 @@ export default function FormValues(){
         userPassword:''
     }
 
-    const allInput=document.querySelector('.name-alert')
-  
+    const alertInputName=document.querySelector('.name-alert')
+    const alertInputLastName=document.querySelector('.lastname-alert')
+    const alertInputAdress=document.querySelector('.adress-alert')
+    
+
+
     function sendPersonalData(e){
         e.preventDefault()
       
         if(personalName.match(nameRegex)){
             dataCharged.userName=personalName
-            allInput.style.setProperty('--activation','hidden')
+            alertInputName.style.setProperty('--activation','hidden')
 
         }else{
-            allInput.style.setProperty('--activation','visible')
-            console.log(allInput[0])
-            return
+            alertInputName.style.setProperty('--activation','visible')
+            
         }
         if(personalLastName.match(nameRegex)){
             dataCharged.userLastName=personalLastName
+            alertInputLastName.style.setProperty('--activation','hidden')
         }else{
-            alert('apellido incorrecto')
-            return
+            alertInputLastName.style.setProperty('--activation','visible')
+            
         }
         if(email.match(emailRegex)) {
             dataCharged.userEmail = email
@@ -45,9 +49,11 @@ export default function FormValues(){
         }
         if(adress.match(adressRegex)){
             dataCharged.userAdress=adress
+            alertInputAdress.style.setProperty('--activation','hidden')
+
         }else{
-            alert('no direccion')
-            return
+            alertInputAdress.style.setProperty('--activation','visible')
+           
         }
         if(password.match(passRegex)){
             dataCharged.userPassword=password
@@ -67,12 +73,12 @@ export default function FormValues(){
             <input type="text" className='personal-data'   value={personalName} onChange={e=> setPersonalName(e.target.value)} required/>
             </div>
             <div className='input-content'>
-            <label htmlFor="">Apellido</label>
+            <label htmlFor="" className='lastname-alert'>Apellido</label>
             <input type="text" value={personalLastName} onChange={e=>setPersonalLastName(e.target.value)} className='personal-data' required />
             </div>
             
             <div className='input-content'>
-            <label htmlFor="">Direccion</label>
+            <label htmlFor="" className='adress-alert'>Direccion</label>
             <input value={adress} type="text" onChange={e=>setAdress(e.target.value)} className='personal-data' required />
             </div>
             
@@ -82,7 +88,7 @@ export default function FormValues(){
             </div>
             
             <div className='input-content'>
-            <label htmlFor="">Contraseña</label>
+            <label htmlFor="">Contraseña (6-10 caracteres)</label>
             <input type="password" value={password} onChange={e=>setPassword(e.target.value)} className='personal-data' required />
             </div>
             <div className='boat-start'>

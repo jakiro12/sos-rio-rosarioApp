@@ -20,8 +20,42 @@
 }
 .name-alert::after{
     visibility: var(--activation);
-    content: 'invalid name';
-    width: 50px;
+    content: '* nombre invalido';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
+.lastname-alert{
+    --activation:hidden;
+}
+.lastname-alert::after{
+    visibility: var(--activation);
+    content: '*apellido invalido';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
+.adress-alert{
+    --activation:hidden;
+}
+.adress-alert::after{
+    visibility: var(--activation);
+    content: 'direccion no valida';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
     height: auto;
     color: red;
     position: absolute;

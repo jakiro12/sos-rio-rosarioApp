@@ -1,4 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
+import TicketDay from '../Components/dateAviable';
 import FormValues from '../Components/formData';
 import Paradores from '../Components/spotsRosario';
 import BoatDraw from '../LogosInCss/boat';
@@ -19,5 +20,9 @@ export const router= createBrowserRouter([
     {
         path:"/paradores",
         element:<Paradores/>
+    },
+    {
+        path:'/ticketoption',
+        element:<TicketDay/>,
     }
 ]);

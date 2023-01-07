@@ -1,0 +1,67 @@
+.ticket-cotainer{
+    height: 90%;
+    width: min(450px,90%);
+    display: grid;
+    background: white;
+    grid-template-rows: 10% 80% 10%;
+}
+.top-decoration{
+    background-color:    #182889;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    --mask: 
+    radial-gradient(4px at 25% 0,#0000 98%,#000) 50% 5px/16px 100% repeat-x,
+    radial-gradient(4px at 75% 50%,#000 99%,#0000 101%) top/16px 8px repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+.top-decoration > div{
+    width: 17.8%;
+    height: auto;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+}
+.bottom-decoration{
+    background-color:  #182889;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    --mask: 
+    radial-gradient(4px at 75% 100%,#0000 98%,#000) 50% calc(100% - 4px)/16px 100% repeat-x,
+    radial-gradient(4px at 25% 50%,#000 99%,#0000 101%) bottom/16px 8px repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+.bottom-decoration > div{
+    width: 17.8%;
+    height: auto;
+    background-color: white;
+    border-radius: 10px 10px 0 0 ;
+}
+.ticket-info{
+    background-color: #0855A0;
+    display: grid;
+    grid-template-rows: 10% 60% 30% ;
+}
+.info-display{
+    width: 80%;
+    height: 90%;
+    border: 4px solid  #182889;
+    margin: auto;
+    display: grid;
+}
+.terminal{
+    margin: auto;
+    font-size: 40px;
+    font-family: monospace;
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transform: skewX(-10deg);
+}
+.price-station{
+    border-top: dotted 5px white;
+}
