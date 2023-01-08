@@ -52,6 +52,8 @@
     border: 4px solid  #182889;
     margin: auto;
     display: grid;
+    grid-template-rows: 1.4fr 0.8fr 0.8fr;
+    grid-template-columns: 1fr;
 }
 .terminal{
     margin: auto;
@@ -64,4 +66,61 @@
 }
 .price-station{
     border-top: dotted 5px white;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+}
+.price-station > div{
+    width: 80%;
+    height: 90%;
+    border: 4px solid  #182889;
+    margin: auto;
+    display: grid;
+}
+.head-info{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-content: space-between;
+    grid-template-columns: 1fr;
+}
+.head-info > h2{
+    display: grid;
+    width: 60%;
+    color: white;
+    height: fit-content;
+    font-size: xx-large;
+    text-align: center;
+    margin-inline:auto ;
+    letter-spacing: 2px;
+}
+.head-info > h2 p{
+    letter-spacing: normal;
+    font-size: x-large;
+}
+.head-info > p{
+    margin-inline: auto;
+    font-size: 18px;
+    font-weight: 500;
+}
+.day-info{
+    display: grid;
+    height: 70%;
+    width: 100%;
+    border-top: 4px solid #182889 ;
+    border-bottom: 4px solid #182889 ;
+    grid-template-columns: 1fr;
+}
+.day-info > div{
+    width: 90%;
+    display:  flex;
+    justify-content: space-between;
+    height: 90%;
+    margin-inline: auto;
+}
+
+.port-info{
+    display: grid;
+    height: 100%;
+    width: 100%;
 }
