@@ -1,5 +1,9 @@
 import '../StylesComponents/ticketStyles.css'
 export default function TicketDay(){
+    let animationBtn= document.querySelector('.timebtn')
+    function ticketTimeSelected(){
+        animationBtn.classList.add('movebtn')
+    }
     return(
         <article className='ticket-cotainer'>
             <header className='top-decoration'>
@@ -15,14 +19,16 @@ export default function TicketDay(){
                     </div>
                     <div className='day-info'>
                     <div>
-                    <p>diaria</p>
-                    <button>cambiar</button>
-                    <p>quinquenal</p>
+                    <p>Valido x 1 dia</p>
+                   <div className='displaybtn'>
+                    <button className='timebtn' onClick={ticketTimeSelected}></button>
+                    </div>
+                    <p>Valido x 15 dias</p>
                     </div>
                     </div>
                     <div className='port-info'>
                     <p>Belgrano 341, Rosario</p>
-                    <p>lunes a domingos (8hs - 18 hs)</p>
+                    <p>martes a domingos (8hs - 18 hs)</p>
                     </div>
                 </div>
                 <div className='price-station'>

@@ -1,0 +1,46 @@
+.entry-form{
+    height: 40%;
+    width: min(450px,90%);
+    border: 2px solid black;
+    display:  grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 85%;
+}
+.title-entry{
+    width: 100%;
+    height: auto;
+    color: white;
+    background-color: red;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-entry{
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    outline: 2px solid blue;
+}
+.user-entry > form{
+    width: 100%;
+    height: 100%;
+    display:  grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 40% 20%;
+}
+.email-entry{
+    display: grid;
+    width: 80%;
+    height: 80%;
+    margin-inline: auto;
+}
+.pass-entry{
+    display: grid;
+    width: 80%;
+    height: 80%;
+    margin-inline: auto;
+}
+
