@@ -11,9 +11,10 @@ export default function Home(){
                 <div className='pass-entry'><label htmlFor="">Password</label>
                     <input type="password" name="" id="" />
                 </div>
-                <button type="submit">ingresar</button>
+                <button type="submit" className='entry'>ingresar</button>
                 </form>
             </main>
+            <footer>crear usuario y olvidar pass</footer>
         </article>
     )
 }
