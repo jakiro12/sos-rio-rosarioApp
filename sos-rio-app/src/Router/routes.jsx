@@ -4,6 +4,7 @@ import FormValues from '../Components/formData';
 import Paradores from '../Components/spotsRosario';
 import BoatDraw from '../LogosInCss/boat';
 import Home from '../Pages/Home'
+import MenuOption from '../Pages/Menu';
 
 export const router= createBrowserRouter([
        { path:"/",
@@ -24,5 +25,9 @@ export const router= createBrowserRouter([
     {
         path:'/ticketoption',
         element:<TicketDay/>,
+    },
+    {
+        path:'/options',
+        element:<MenuOption/>
     }
 ]);

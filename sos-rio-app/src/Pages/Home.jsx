@@ -5,7 +5,7 @@ export default function Home(){
     return(
         <div className='body-entry'>
             <NavBarOptions/>
-            <BoatDraw className="animation-boat"/>
+            <BoatDraw />
         <article className="entry-form">
             <header className='title-entry'> <h3>sos rosario app</h3></header>
             <main className='user-entry'> 

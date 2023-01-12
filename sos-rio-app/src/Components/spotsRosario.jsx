@@ -14,11 +14,11 @@ export default function Paradores(){
             <div className='options-selected'>
             <select name="format"  onChange={(e)=>changeColor(e.target.value)}>
             <option value={myValues[0]} >Banquito San Andrés</option> 
-            <option value="400px" >Garden Island</option>
-            <option value="300px" >El Pimpollal</option>
-            <option value="400px" >Los Marinos</option>
-            <option value="300px" >La Florida</option>
-            <option value="400px" >Costa Alta</option>
+            <option value="none" >Garden Island</option>
+            <option value="none" >El Pimpollal</option>
+            <option value="none" >Los Marinos</option>
+            <option value="none" >La Florida</option>
+            <option value="none" >Costa Alta</option>
             </select>
             </div>
             <a href="https://www.google.com.ar" className='cards'>

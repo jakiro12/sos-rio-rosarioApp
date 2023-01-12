@@ -6,9 +6,11 @@ nav{
     justify-content: space-around;
 }
 .option{
-    width: 20%;
-    height: 100%;
+    text-align: center;
+    width: 22%;
+    height: 80%;
     outline: 2px solid black;
     color: white;
-
+    margin-top: auto;
+    font-size: large;
 }

@@ -35,6 +35,17 @@
     background-color: red;
     color: white
 }
+.logo-container::after{
+    content: '';
+    width: 3px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.63);
+    transform: rotateZ(-5deg);
+    position: absolute;
+    left: -8%;
+    bottom: 25%;
+   
+}
 .part1{
     position: absolute;
     top: 4%;
