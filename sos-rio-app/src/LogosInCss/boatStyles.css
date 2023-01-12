@@ -1,7 +1,39 @@
+@keyframes moving {
+    0%{
+        transform: translateX(-100vw);
+    }
+    50%{
+        transform: translateX(0vw);
+    }
+    100%{
+        transform: translateX(100vw);
+    }
+}
 .logo-container{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     position: relative;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-name: moving;
+    animation-iteration-count: infinite;
+}
+.logo-container::before{
+    content: 'NTF';
+    position: absolute;
+    left: -50%;
+    top: 0;
+    color: black;
+    font-size: 24px;
+    transform: skewX(5deg);
+    width: 50px; 
+    height: fit-content;
+    padding: 3%;
+    border-radius: 0 0 25% 50%;
+    outline: 2px solid black; 
+    background-color: red;
+    color: white
 }
 .part1{
     position: absolute;
@@ -12,12 +44,12 @@
     transform: rotateZ(10deg);
     position: absolute;
     left: 5%;
-    top: 10%;
+    top: 9%;
 }
 .part3{
     position: absolute;
     left: 6%;
-    top: 19%;
+    top: 25%;
 }
 .popa{
     width: 70px;
@@ -41,7 +73,11 @@
     height: 80px;
     background: #385BA0;
     transform: skew(-20deg);
-   outline: 4px solid white;
+   outline: 5px solid white;
     border-radius: 100% 0 10px 0 ;
 }
             
+
+.animation-boat{
+ 
+}

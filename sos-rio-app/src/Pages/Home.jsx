@@ -1,8 +1,13 @@
 import '../StylesComponents/homeStyles.css'
+import BoatDraw from '../LogosInCss/boat'
+import NavBarOptions from '../Components/navBar'
 export default function Home(){
     return(
+        <div className='body-entry'>
+            <NavBarOptions/>
+            <BoatDraw className="animation-boat"/>
         <article className="entry-form">
-            <header className='title-entry'> <h3>nueva terminal fluvial</h3></header>
+            <header className='title-entry'> <h3>sos rosario app</h3></header>
             <main className='user-entry'> 
             <form>
                 <div className='email-entry'><label htmlFor="">Email</label>
@@ -14,7 +19,11 @@ export default function Home(){
                 <button type="submit" className='entry'>ingresar</button>
                 </form>
             </main>
-            <footer>crear usuario y olvidar pass</footer>
+            <footer>
+                <a href='#' className='linked'>Crear cuenta</a>
+                <a href='#' className='linked'>Olvidaste la contraseña?</a>
+            </footer>
         </article>
+        </div>
     )
 }
