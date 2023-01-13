@@ -5,20 +5,21 @@ import price from '../svgLogos/price.svg'
 export default function Paradores(){
     const imageCard=document.querySelector('.cards')
     function changeColor(e){
-        imageCard.style.backgroundImage = e
+        console.log(imageCard.classList)
+        imageCard.classList.toggle('cards-garden')
+        
     }
-    const myValues=['url("https://www.outsideonline.com/wp-content/uploads/2018/12/10/running-dog-breeds_s.jpg")']
     return(
         <div className='container-spots'>
             <h2>Paradores</h2>
             <div className='options-selected'>
             <select name="format"  onChange={(e)=>changeColor(e.target.value)}>
-            <option value={myValues[0]} >Banquito San Andrés</option> 
-            <option value="none" >Garden Island</option>
-            <option value="none" >El Pimpollal</option>
-            <option value="none" >Los Marinos</option>
-            <option value="none" >La Florida</option>
-            <option value="none" >Costa Alta</option>
+            <option value="fasdf" >Banquito San Andrés</option> 
+            <option value='cards-garden' >Garden Island</option>
+            <option value='../spotsImages/islandGarden.jpeg' >El Pimpollal</option>
+            <option value='../spotsImages/islandGarden.jpeg' >Los Marinos</option>
+            <option value='../spotsImages/islandGarden.jpeg' >La Florida</option>
+            <option value='../spotsImages/islandGarden.jpeg' >Costa Alta</option>
             </select>
             </div>
             <a href="https://www.google.com.ar" className='cards'>

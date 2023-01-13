@@ -1,18 +1,22 @@
 import '../StylesComponents/formStyles.css'
-import { useState } from 'react'
-import { emailRegex,nameRegex,adressRegex,passRegex } from '../Validators/validatorForm'
+import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
+import { emailRegex,nameRegex,adressRegex,passRegex,phoneRegex } from '../Validators/validatorForm';
 export default function FormValues(){
     const[personalName,setPersonalName]=useState('')
     const[personalLastName,setPersonalLastName]=useState('')
     const[adress,setAdress]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
+    const[phone,setPhone]=useState('')
 
+    const navigate=useNavigate()
   
     const dataCharged={
         userName:'',
         userLastName:'',
         userAdress:'',
+        userPhone:'',
         userEmail:'',
         userPassword:''
     }
@@ -20,8 +24,9 @@ export default function FormValues(){
     const alertInputName=document.querySelector('.name-alert')
     const alertInputLastName=document.querySelector('.lastname-alert')
     const alertInputAdress=document.querySelector('.adress-alert')
-    
-
+    const alertInputPhone=document.querySelector('.phone-alert')
+    const alertInputEmail=document.querySelector('.email-alert')
+    const alertInputPass=document.querySelector('.pass-alert')
 
     function sendPersonalData(e){
         e.preventDefault()
@@ -32,39 +37,47 @@ export default function FormValues(){
 
         }else{
             alertInputName.style.setProperty('--activation','visible')
-            
+            return
         }
         if(personalLastName.match(nameRegex)){
             dataCharged.userLastName=personalLastName
             alertInputLastName.style.setProperty('--activation','hidden')
         }else{
-            alertInputLastName.style.setProperty('--activation','visible')
-            
+            alertInputLastName.style.setProperty('--activation','visible') 
+            return
         }
         if(email.match(emailRegex)) {
             dataCharged.userEmail = email
+            alertInputEmail.style.setProperty('--activation','hidden')
         }else{
-            alert('no perros')
+            alertInputEmail.style.setProperty('--activation','visible')          
             return
         }
         if(adress.match(adressRegex)){
             dataCharged.userAdress=adress
             alertInputAdress.style.setProperty('--activation','hidden')
-
         }else{
             alertInputAdress.style.setProperty('--activation','visible')
-           
+            return
+        }
+        if(phone.match(phoneRegex)){
+            dataCharged.userPhone=phone
+            alertInputPhone.style.setProperty('--activation','hidden')
+        }else{
+            alertInputPhone.style.setProperty('--activation','visible')
+            return
         }
         if(password.match(passRegex)){
             dataCharged.userPassword=password
+            alertInputPass.style.setProperty('--activation','hidden')
         }else{
-            alert('datos invalidos')
+            alertInputPass.style.setProperty('--activation','visible')
             return
         }
         
         console.log(dataCharged)
 
-
+        navigate('/')
     }
     return(
         <form className="container" onSubmit={sendPersonalData}>
@@ -83,17 +96,22 @@ export default function FormValues(){
             </div>
             
             <div className='input-content'>
-            <label htmlFor="">Correo electronico</label>
+            <label htmlFor="" className='phone-alert'>Telefono</label>
+            <input value={phone} type="text" onChange={e=>setPhone(e.target.value)} className='personal-data' required />
+            </div>
+
+            <div className='input-content'>
+            <label htmlFor="" className='email-alert'>Correo electronico</label>
             <input type="email" value={email} onChange={e=>setEmail(e.target.value)} className='personal-data' required />
             </div>
             
             <div className='input-content'>
-            <label htmlFor="">Contraseña (6-10 caracteres)</label>
+            <label htmlFor="" className='pass-alert'>Crear Contraseña</label>
             <input type="password" value={password} onChange={e=>setPassword(e.target.value)} className='personal-data' required />
             </div>
             <div className='boat-start'>
-                <div className='draw-boat'>logo</div>
-                <button className='send-data' type="submit">Enviar</button>
+                
+                <button className='send-data' type="submit">Registrarse</button>
             </div>
         </form>
     )

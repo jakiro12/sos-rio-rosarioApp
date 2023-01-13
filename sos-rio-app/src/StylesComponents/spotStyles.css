@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
 .container-spots{
-    height: 83%;
-    width: min(450px,90%);
+    height: 100%;
+    width: min(450px,100%);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 20% 70%;
@@ -10,6 +10,7 @@
 }
 .container-spots h2{
     margin-inline: auto;
+    font-size: xx-large;
 }
 .options-selected{
     height: 40%;
@@ -49,14 +50,15 @@
 .options-selected select:focus{
     outline: none;
 }
+
 .cards{
     height: 95%;
-    width: 70%;
+    width: 80%;
     border: 2px groove whitesmoke;
     text-decoration: none;
     margin-inline: auto;
     border-radius: 5px;
-    background-image: url('https://www.impulsonegocios.com/wp-content/uploads/2020/11/playa-protocolo-3.jpg');
+    background-image: url('../spotsImages/elPimpollal.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,6 +66,10 @@
     display: grid;
     color: black;
     grid-template-rows: 80% 20%;
+}
+.cards-garden{
+    background-image: url('../spotsImages/islandGarden.jpeg');
+   
 }
 .title-spot{
     justify-content: flex-start;

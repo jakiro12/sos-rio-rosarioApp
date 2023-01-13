@@ -4,7 +4,7 @@
     display: grid;
     color: white;
     background:  #0855A0 ;
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(7,1fr);
     grid-template-columns: 1fr;
     }
 
@@ -63,8 +63,55 @@
     outline: 2px solid red;
     
 }
+.phone-alert{
+    --activation:hidden;
+}
+.phone-alert::after{
+    visibility: var(--activation);
+    content: 'telefono no valido';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
+.email-alert{
+    --activation:hidden;
+}
+.email-alert::after{
+    visibility: var(--activation);
+    content: 'email no valido';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
+.pass-alert{
+    --activation:hidden;
+}
+.pass-alert::after{
+    visibility: var(--activation);
+    content: '9 a 10 caracteres';
+    font-weight: 700;
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: red;
+    position: absolute;
+    right: 0;
+    outline: 2px solid red;
+    
+}
 .input-content > label{
-    outline: 2px solid black;
     margin-inline-end: auto;
     width: 99%;
     position: relative;
@@ -85,8 +132,10 @@
 
 .send-data{
     height: 100%;
-    width: 50px;
+    width: fit-content;
     color: white;
+    padding: 2%;
+    border-radius: 5px;
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -94,9 +143,8 @@
 }
 .boat-start{
     display:  flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 40%;
     margin: auto;
-    border: 2px solid black;
     width: 76%;
 }

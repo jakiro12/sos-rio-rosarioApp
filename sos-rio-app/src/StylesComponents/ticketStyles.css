@@ -162,7 +162,6 @@
 .quantity-tickets{
     width: 100%;
     height: 100%;
-    outline: 2px solid black;
 }
 .quantity-tickets > div{
     width: 40%;
