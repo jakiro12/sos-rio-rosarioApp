@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
 .container-spots{
     height: 100%;
-    width: min(450px,100%);
+    width: min(550px,100%);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10% 20% 70%;
@@ -53,38 +53,26 @@
 
 .cards{
     height: 95%;
-    width: 80%;
+    width: 90%;
     border: 2px groove whitesmoke;
     text-decoration: none;
     margin-inline: auto;
     border-radius: 5px;
-    background-image: url('../spotsImages/elPimpollal.jpg');
+    background-image: url('https://i.ibb.co/KV38gbS/los-Marinos.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 5%;
     display: grid;
     color: black;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
 }
-.cards-garden{
-    background-image: url('../spotsImages/islandGarden.jpeg');
-   
-}
-.title-spot{
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-indent: 15px;
-    margin-top: 2%;
-}
-.name-spot{
-    font-size: 44px;
-    font-weight: 500;
-    font-family: 'Moon Dance', cursive;
 
-}
+
 .advantages{
     display: grid;
+    margin-bottom: 4%;
     grid-template-columns: repeat(3,1fr);
 }
 .advantages p{
@@ -100,7 +88,7 @@
     align-content: center;
 }
 .boat-logo{
-    width: 23px;
-    height: 23px;
+    width: 33px;
+    height: 33px;
     margin-inline: auto;
 }
