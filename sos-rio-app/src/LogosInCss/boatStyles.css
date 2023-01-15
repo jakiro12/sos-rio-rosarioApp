@@ -22,30 +22,15 @@
 .logo-container::before{
     content: 'NTF';
     position: absolute;
-    left: -50%;
-    top: 0;
-    color: black;
-    font-size: 24px;
-    transform: skewX(5deg);
-    width: 50px; 
-    height: fit-content;
-    padding: 3%;
-    border-radius: 0 0 25% 50%;
-    outline: 2px solid black; 
-    background-color: red;
-    color: white
-}
-.logo-container::after{
-    content: '';
-    width: 3px;
-    height: 90px;
-    background-color: rgba(0, 0, 0, 0.63);
-    transform: rotateZ(-5deg);
-    position: absolute;
-    left: -8%;
+    left: -100%;
     bottom: 25%;
-   
+    color: #182889;
+    font-size: 74px;
+    transform: skewX(-5deg);
+    width: fit-content; 
+    height: fit-content;
 }
+
 .part1{
     position: absolute;
     top: 4%;

@@ -13,21 +13,21 @@ export default function Paradores(){
     function changeSpot(e){
         let res= JSON.parse(e)
         console.log(res.image)
-        imageCard.style.backgroundImage=res.image
+        if(imageCard) imageCard.style.backgroundImage=res.image
         setSpotSelected(res.nameSpot)
-     
+      
     }
     return(
         <div className='container-spots'>
             <h2>Paradores</h2>
             <div className='options-selected'>
             <select name="format"  onChange={(e)=>changeSpot(e.target.value)}>
-            <option value='none' >Banquito San Andrés</option> 
+            <option value={JSON.stringify(imageUrls[2])} >Banquito San Andrés</option> 
             <option value={JSON.stringify(imageUrls[2])}  >Garden Island</option>
             <option value={JSON.stringify(imageUrls[1])} >El Pimpollal</option>
             <option value={JSON.stringify(imageUrls[0])} >Los Marinos</option>
-            <option value='none' >La Florida</option>
-            <option value='none' >Costa Alta</option>
+            <option value={JSON.stringify(imageUrls[2])} >La Florida</option>
+            <option value={JSON.stringify(imageUrls[2])} >Costa Alta</option>
             </select>
             </div>
             <a href="#" onClick={()=>console.log(spotSelected)}  className='cards'>
