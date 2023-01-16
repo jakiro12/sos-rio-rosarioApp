@@ -86,6 +86,7 @@
     display: grid;
     place-items: center;
     align-content: center;
+    color: white;
 }
 .boat-logo{
     width: 33px;
