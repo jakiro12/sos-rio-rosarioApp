@@ -32,7 +32,7 @@ export const router= createBrowserRouter([
         element:<MenuOption/>
     },
     {
-        path:'/navy',
+        path:'/shipping',
         element:<AllBoats/>
     }
 ]);

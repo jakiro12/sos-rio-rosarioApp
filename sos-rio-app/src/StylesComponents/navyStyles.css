@@ -1,5 +1,10 @@
+.menu-boats{
+    width: 100vw;
+    height: 100vh;
+    background: #0855A0;
+
+}
 .navy-container{
-    outline:  2px solid black;
     width: min(550px,100%);
     height: 80%;
     display: grid;
@@ -8,12 +13,11 @@
 }
 .navy-container > h2{
     margin-inline: auto;
-
+    color: white;
 }
 .float-aviable{
     width: auto;
     height: 100%;
-    outline: 2px solid red;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3,1fr);
@@ -21,9 +25,10 @@
 .float-aviable > article {
     width: 90%;
     height: 95%;
-    outline: 2px solid black;
+    border: 3px groove black;
     margin-inline: auto;
     display:grid;
+    border-radius: 10px;
     grid-template-columns: repeat(2,1fr);
 }
 .miss{

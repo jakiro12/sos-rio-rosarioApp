@@ -1,7 +1,7 @@
 import '../StylesComponents/navyStyles.css'
 import boatMiss from '../svgLogos/missLito.jpg'
 export default function AllBoats(){
-    return(
+    return(<div className='menu-boats'>
         <div className="navy-container">
             <h2>Embarcaciones</h2>
             <div className='float-aviable'>
@@ -38,6 +38,7 @@ export default function AllBoats(){
                     </main>
                 </article>
             </div>
+        </div>
         </div>
     )
 }
