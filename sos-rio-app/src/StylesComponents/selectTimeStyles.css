@@ -1,5 +1,60 @@
 .days-aviable-container{
     width: 100vw;
+    background-color:  #0855A0 ;
     height: 100vh;
     display: grid;
+    grid-template-rows: 20% 60% 20%;
+    place-items: center;
+}
+.title-days{
+    color: white;
+    font-size: 25px;    
+}
+.time-options-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.start{
+    display: grid;
+    width: 40%;
+    height: 70%;
+    border: 4px solid  #182889;
+}
+.start > div{
+    height: fit-content;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.start label{
+    font-size: larger;
+}
+.came-back{
+    width: 40%;
+    height: 70%;
+    display: grid;
+    border: 4px solid  #182889;
+}
+.came-back > div{
+    height: fit-content;
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.came-back label{
+    font-size: larger;
+}
+.time-check-btn{
+    width: fit-content;
+    height: fit-content;
+    border: 3px groove #182889;
+    font-size: larger;
+    border-radius: 5px;
+    color: black;
+    padding: 3%;
 }

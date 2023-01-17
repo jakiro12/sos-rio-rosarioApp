@@ -1,6 +1,8 @@
 import '../StylesComponents/navyStyles.css'
 import boatMiss from '../svgLogos/missLito.jpg'
+import {  useNavigate } from 'react-router-dom'
 export default function AllBoats(){
+    const navigate=useNavigate()
     return(<div className='menu-boats'>
         <div className="navy-container">
             <h2>Embarcaciones</h2>
@@ -13,7 +15,7 @@ export default function AllBoats(){
                         <p>Paseo de 1 hora 15 minutos por el canal principal,
                              en tracker.
                               Se llega hasta Balneario La Florida.</p>
-                            <button className='select-time'>Seleccionar horarios</button>
+                            <button className='select-time' onClick={()=>navigate('/checkturns')}>Seleccionar horarios</button>
                     </main>
                 </article>
                 <article>
