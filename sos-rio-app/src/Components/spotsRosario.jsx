@@ -3,7 +3,9 @@ import proof from '../svgLogos/boat1.svg'
 import food from '../svgLogos/food.svg'
 import price from '../svgLogos/price.svg'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 export default function Paradores(){
+    const navigate=useNavigate()
     const[spotSelected,setSpotSelected]=useState()
     const imageCard=document.querySelector('.cards')
     const imageUrls=[
@@ -21,16 +23,14 @@ export default function Paradores(){
         <div className='container-spots'>
             <h2>Paradores</h2>
             <div className='options-selected'>
-            <select name="format"  onChange={(e)=>changeSpot(e.target.value)}>
-            <option value={JSON.stringify(imageUrls[2])} >Banquito San Andrés</option> 
+            <select name="spots"  onChange={(e)=>changeSpot(e.target.value)}>
             <option value={JSON.stringify(imageUrls[2])}  >Garden Island</option>
-            <option value={JSON.stringify(imageUrls[1])} >El Pimpollal</option>
-            <option value={JSON.stringify(imageUrls[0])} >Los Marinos</option>
-            <option value={JSON.stringify(imageUrls[2])} >La Florida</option>
+            <option value={JSON.stringify(imageUrls[1])}  >El Pimpollal</option>
+            <option value={JSON.stringify(imageUrls[0])} selected >Los Marinos</option>
             <option value={JSON.stringify(imageUrls[2])} >Costa Alta</option>
             </select>
             </div>
-            <a href="#" onClick={()=>console.log(spotSelected)}  className='cards'>
+            <a href="#" onClick={()=>navigate('/ticketoption')}  className='cards'>
                 
                 <div className='advantages'>
                     <span className='time-lapse'>

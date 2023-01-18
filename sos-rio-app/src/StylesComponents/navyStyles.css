@@ -41,12 +41,15 @@
     display: grid;
     place-items: center;
     grid-template-rows: 20% 10% 40% 30%;
+    font-size: 16px;
 }
 .select-time{
-    padding: 3%;
+    padding: 2%;
     cursor: pointer;
     font-weight: 600;
-    color: black;
+    color: white;
+    font-size: 16px;
     border-radius:  10px;
-    border: 2px groove black;
+    background: transparent;
+    border: 2px solid  #182889;
 }
