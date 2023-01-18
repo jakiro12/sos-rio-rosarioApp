@@ -4,7 +4,16 @@ export default function TimeAndDayTakeIt(){
     const navigate=useNavigate()
     return(
         <article className='days-aviable-container'>
-            <header className='title-days'>Seleccione un dia y hora disponibles</header>
+            <header className='title-days'>Seleccione un dia y hora disponibles
+                <select>
+                    <option value="">martes</option>
+                    <option value="">miercoles</option>
+                    <option value="">jueves</option>
+                    <option value="">viernes</option>
+                    <option value="">sabado</option>
+                    <option value="">domingo</option>
+                </select>
+            </header>
             <main className='time-options-container'>
                 <div className="start">Horarios de partida
                     <div><label htmlFor="">12:45</label>

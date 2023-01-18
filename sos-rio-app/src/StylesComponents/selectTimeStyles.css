@@ -7,8 +7,13 @@
     place-items: center;
 }
 .title-days{
+    height: 60%;
+    width: 90%;
     color: white;
     font-size: 25px;    
+    display: grid;
+    place-items: center;
+    align-content: space-around;
 }
 .time-options-container{
     display: flex;
@@ -53,8 +58,9 @@
     width: fit-content;
     height: fit-content;
     border: 3px groove #182889;
-    font-size: larger;
-    border-radius: 5px;
-    color: black;
-    padding: 3%;
+    font-size: xx-large;
+    border-radius: 15px;
+    background: transparent;
+    color: white;
+    padding: 5%;
 }
