@@ -62,7 +62,7 @@ export default function TicketDay(){
                         </div>
                        <div className='set-ticket'>
                        <p>Precio:{amountTickets * priceOfTickets}$</p>
-                       <button>Metodos de pago</button>
+                       <button>Solicitar</button>
                         </div> 
                     </div>
                 

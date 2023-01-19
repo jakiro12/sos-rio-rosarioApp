@@ -5,7 +5,7 @@ export default function TimeAndDayTakeIt(){
     return(
         <article className='days-aviable-container'>
             <header className='title-days'>Seleccione un dia y hora disponibles
-                <select>
+                <select >
                     <option value="">martes</option>
                     <option value="">miercoles</option>
                     <option value="">jueves</option>

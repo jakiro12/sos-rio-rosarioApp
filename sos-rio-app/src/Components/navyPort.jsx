@@ -15,7 +15,7 @@ export default function AllBoats(){
                         <p>Precio: $ 1.600 por persona
                             $ 800 Menores de 3 a 10 años
                             (Menores de 3 sin cargo)</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturns')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={()=>navigate('/checkturnspot')}>Seleccionar horarios</button>
                     </main>
                 </article>
                 <article>
@@ -26,7 +26,7 @@ export default function AllBoats(){
                         <p>Paseo de 1 hora 15 minutos por el canal principal,
                              en tracker.
                               Se llega hasta Balneario La Florida.</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturns')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={()=>navigate('/checkturntracker')}>Seleccionar horarios</button>
                     </main>
                 </article>
                 <article>
@@ -36,7 +36,7 @@ export default function AllBoats(){
                         <p>Paseos</p>
                         <p>Paseo de 1 hora 45 minutos por el canal principal, en gomón hasta 
                             islote después del Puente Rosario-Victoria.</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturns')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={()=>navigate('/checkturnspot')}>Seleccionar horarios</button>
                     </main>
                 </article>
             </div>

@@ -24,7 +24,7 @@
 }
 .start{
     display: grid;
-    width: 40%;
+    width: 45%;
     height: 70%;
     border: 4px solid  #182889;
 }
@@ -39,7 +39,7 @@
     font-size: larger;
 }
 .came-back{
-    width: 40%;
+    width: 45%;
     height: 70%;
     display: grid;
     border: 4px solid  #182889;

@@ -1,7 +1,7 @@
 import '../StylesComponents/spotStyles.css'
 import proof from '../svgLogos/boat1.svg'
 import food from '../svgLogos/food.svg'
-import price from '../svgLogos/price.svg'
+import phone from '../svgLogos/phone-call.svg'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 export default function Paradores(){
@@ -42,8 +42,8 @@ export default function Paradores(){
                 <p>Si</p>
                 </span>
                 <span className='time-lapse'>
-                <img className='boat-logo' src={price} alt='bote'/>
-                <p>telefono</p>
+                <img className='boat-logo' src={phone} alt='bote'/>
+                <p>341......</p>
                 </span>
                 </div>
                 

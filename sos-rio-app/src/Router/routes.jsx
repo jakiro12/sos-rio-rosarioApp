@@ -4,6 +4,7 @@ import FormValues from '../Components/formData';
 import AllBoats from '../Components/navyPort';
 import TimeAndDayTakeIt from '../Components/selectTime';
 import Paradores from '../Components/spotsRosario';
+import DaysAndHoursTracker from '../Components/trackerTimes';
 import BoatDraw from '../LogosInCss/boat';
 import Home from '../Pages/Home'
 import MenuOption from '../Pages/Menu';
@@ -37,7 +38,11 @@ export const router= createBrowserRouter([
         element:<AllBoats/>
     },
     {
-        path:'/checkturns',
+        path:'/checkturnspot',
         element:<TimeAndDayTakeIt/>
+    },
+    {
+        path:'/checkturntracker',
+        element:<DaysAndHoursTracker/>
     }
 ]);
