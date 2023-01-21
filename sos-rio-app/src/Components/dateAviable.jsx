@@ -35,22 +35,22 @@ export default function TicketDay(){
                     </div>
                     <div className='day-info'>
                     <div>
-                    <p>Valido x 1 dia</p>
+                    <p>Sin reserva</p>
                    <div className='displaybtn'>
                     <button className='timebtn' onClick={ticketTimeSelected}></button>
                     </div>
-                    <p>Valido x 15 dias</p>
+                    <p>Reservar embarcacion</p>
                     </div>
                     </div>
                     <div className='port-info'>
-                    <p>Belgrano 341, Rosario</p>
-                    <p>Fecha de emision {timeTakeIt}</p>
+                    <p>Vigencia del ticket</p>
+                    <p> {timeTakeIt} hasta las 16 horas</p>
                     </div>
                 </div>
                 <div className='price-station'>
                     <div>
                         <p className='open-time'>
-                           Abierto Lun-Dom de 8 hrs a 18 hrs
+                           Abierto Mar-Dom de 8 hrs a 18 hrs
                         </p>
                         <div className='quantity-tickets'>
                            cantidad de tickets : <div>

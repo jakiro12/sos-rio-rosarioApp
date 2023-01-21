@@ -1,6 +1,6 @@
 .select-container-time{
-    width: 60%;
-    height: fit-content;
+    width: 50%;
+    height: max-content;
     font-size: 18px;
     margin-inline: auto;
     display: flex;
@@ -25,7 +25,14 @@
     height: 100%;
     appearance: none;
    box-shadow: none;
+   font-size: 18px;
    border: none;
    text-indent: 5%;
    background-color:#D6DBDD;
+}
+.select-container-time select::-ms-expand{
+    display: none;
+}
+.select-container-time select:focus{
+    outline: none;
 }

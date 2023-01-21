@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import '../StylesComponents/tourStyles.css'
-export default function DaysAndHoursTracker(){
+export default function DaysAndHoursGomon(){
     const navigate=useNavigate()
     return(
         <article className='days-aviable-container'>
@@ -18,16 +18,16 @@ export default function DaysAndHoursTracker(){
         </header>
         <main className='time-options-container'>
             <div className="start">Horarios de partida
-                <div><label htmlFor="">12:45</label>
+                <div><label htmlFor="">10:15</label>
                     <input type="checkbox" name="" id="" />
                 </div>
-                <div><label htmlFor="">13:45</label>
+                <div><label htmlFor="">11:15</label>
                     <input type="checkbox" name="" id="" />
                 </div>
-                <div><label htmlFor="">14:45</label>
+                <div><label htmlFor="">12:15</label>
                     <input type="checkbox" name="" id="" />
                 </div>
-                <div><label htmlFor="">15:45</label>
+                <div><label htmlFor="">13:15</label>
                     <input type="checkbox" name="" id="" />
                 </div>
             </div>

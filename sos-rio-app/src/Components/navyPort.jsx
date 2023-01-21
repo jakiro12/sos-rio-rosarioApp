@@ -1,8 +1,14 @@
 import '../StylesComponents/navyStyles.css'
 import boatMiss from '../svgLogos/missLito.jpg'
 import {  useNavigate } from 'react-router-dom'
+import { SelectPriceTicket } from '../Provider/userProvider'
 export default function AllBoats(){
+    const {ticketValue,setTicketValue}=SelectPriceTicket()
     const navigate=useNavigate()
+    const navigateWithSanAndres =()=>{
+        setTicketValue(1600)
+        navigate('/checkturnspot')
+    }
     return(<div className='menu-boats'>
         <div className="navy-container">
             <h2>Embarcaciones</h2>
@@ -10,19 +16,19 @@ export default function AllBoats(){
                 <article>
                     <img src={boatMiss} alt="foto barco" className='miss'/>
                     <main className='info-boat-island'>
-                        <h3>Banquito san Andres</h3>
+                        <h3>Banquito san Andres </h3>
                         <p>Viaja a las paradores</p>
                         <p>Precio: $ 1.600 por persona
                             $ 800 Menores de 3 a 10 años
                             (Menores de 3 sin cargo)</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturnspot')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={navigateWithSanAndres}>Seleccionar horarios</button>
                     </main>
                 </article>
                 <article>
                 <img src={boatMiss} alt="foto barco" className='miss'/>
                     <main className='info-boat-island'>
                         <h3>Tracker Garden I</h3>
-                        <p>Paseos</p>
+                        <p>Excursion</p>
                         <p>Paseo de 1 hora 15 minutos por el canal principal,
                              en tracker.
                               Se llega hasta Balneario La Florida.</p>
@@ -33,10 +39,10 @@ export default function AllBoats(){
                 <img src={boatMiss} alt="foto barco" className='miss'/>
                     <main className='info-boat-island'>
                         <h3>Gomon Max II</h3>
-                        <p>Paseos</p>
+                        <p>Excursion</p>
                         <p>Paseo de 1 hora 45 minutos por el canal principal, en gomón hasta 
                             islote después del Puente Rosario-Victoria.</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturnspot')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={()=>navigate('/checkturngomon')}>Seleccionar horarios</button>
                     </main>
                 </article>
             </div>

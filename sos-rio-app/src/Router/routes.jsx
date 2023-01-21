@@ -1,6 +1,8 @@
 import {createBrowserRouter} from 'react-router-dom'
 import TicketDay from '../Components/dateAviable';
+import Hijo from '../Components/firstTry';
 import FormValues from '../Components/formData';
+import DaysAndHoursGomon from '../Components/gomonTime';
 import AllBoats from '../Components/navyPort';
 import TimeAndDayTakeIt from '../Components/selectTime';
 import Paradores from '../Components/spotsRosario';
@@ -44,5 +46,14 @@ export const router= createBrowserRouter([
     {
         path:'/checkturntracker',
         element:<DaysAndHoursTracker/>
+    },
+    {
+        path:'/checkturngomon',
+        element:<DaysAndHoursGomon/>
+        
+    },
+    {
+        path:'/prueba',
+        element:<Hijo/>
     }
 ]);
