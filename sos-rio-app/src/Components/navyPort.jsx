@@ -3,11 +3,19 @@ import boatMiss from '../svgLogos/missLito.jpg'
 import {  useNavigate } from 'react-router-dom'
 import { SelectPriceTicket } from '../Provider/userProvider'
 export default function AllBoats(){
-    const {ticketValue,setTicketValue}=SelectPriceTicket()
+    const {setTicketValue}=SelectPriceTicket()
     const navigate=useNavigate()
     const navigateWithSanAndres =()=>{
         setTicketValue(1600)
         navigate('/checkturnspot')
+    }
+    const navigateWithGarden=()=>{
+        setTicketValue(1200)
+        navigate('/checkturntracker')
+    }
+    const navigateWithGomon=()=>{
+        setTicketValue(1000)
+        navigate('/checkturngomon')
     }
     return(<div className='menu-boats'>
         <div className="navy-container">
@@ -32,7 +40,7 @@ export default function AllBoats(){
                         <p>Paseo de 1 hora 15 minutos por el canal principal,
                              en tracker.
                               Se llega hasta Balneario La Florida.</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturntracker')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={navigateWithGarden}>Seleccionar horarios</button>
                     </main>
                 </article>
                 <article>
@@ -42,7 +50,7 @@ export default function AllBoats(){
                         <p>Excursion</p>
                         <p>Paseo de 1 hora 45 minutos por el canal principal, en gomón hasta 
                             islote después del Puente Rosario-Victoria.</p>
-                            <button className='select-time' onClick={()=>navigate('/checkturngomon')}>Seleccionar horarios</button>
+                            <button className='select-time' onClick={navigateWithGomon}>Seleccionar horarios</button>
                     </main>
                 </article>
             </div>

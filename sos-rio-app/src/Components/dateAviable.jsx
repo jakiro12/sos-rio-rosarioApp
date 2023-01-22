@@ -1,11 +1,12 @@
-import '../StylesComponents/ticketStyles.css'
-import { useState } from 'react'
+import '../StylesComponents/ticketStyles.css';
+import { useState } from 'react';
+import { SelectPriceTicket } from '../Provider/userProvider';
 export default function TicketDay(){
     let animationBtn= document.querySelector('.timebtn')
     const[oneDay,setOneDay]=useState(true)
     const[fifteenDays,setFifteenDays]=useState(false)
     const[amountTickets,setAmountTickets]=useState(1)
-    const[priceOfTickets,setPriceOfTickets]=useState(300)
+    const {ticketValue}=SelectPriceTicket()
     function ticketTimeSelected(){
         if(fifteenDays === false && oneDay === true){
         setOneDay(false)
@@ -61,7 +62,7 @@ export default function TicketDay(){
                            </div>
                         </div>
                        <div className='set-ticket'>
-                       <p>Precio:{amountTickets * priceOfTickets}$</p>
+                       <p>Precio:{amountTickets * ticketValue}$</p>
                        <button>Solicitar</button>
                         </div> 
                     </div>
