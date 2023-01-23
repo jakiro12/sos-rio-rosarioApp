@@ -2,10 +2,15 @@ import { useNavigate } from "react-router-dom"
 import '../StylesComponents/tourStyles.css'
 export default function DaysAndHoursGomon(){
     const navigate=useNavigate()
+    const today= new Date()
+    const formatDay= new Intl.DateTimeFormat("es-ar",{
+        localeMatcher:'best fit'
+    })
     return(
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
           <div className="select-container-time">
+            {console.log(formatDay.format(today))}
             <select >
                 <option value="">martes</option>
                 <option value="">miercoles</option>
