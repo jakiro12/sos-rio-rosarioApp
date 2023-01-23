@@ -1,23 +1,29 @@
 import { useNavigate } from "react-router-dom"
 import '../StylesComponents/tourStyles.css'
+import { SelectStatusGomon } from "../Provider/userProvider"
 export default function DaysAndHoursGomon(){
     const navigate=useNavigate()
     const today= new Date()
     const formatDay= new Intl.DateTimeFormat("es-ar",{
-        localeMatcher:'best fit'
+       weekday:'long'
     })
+    const {setDaySelectInGomon} = SelectStatusGomon()
+    const actualDay=formatDay.format(today)
+    const dispatchDayGomon=(e)=>{
+        setDaySelectInGomon(e)
+    }
     return(
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
           <div className="select-container-time">
-            {console.log(formatDay.format(today))}
-            <select >
-                <option value="">martes</option>
-                <option value="">miercoles</option>
-                <option value="">jueves</option>
-                <option value="">viernes</option>
-                <option value="">sabado</option>
-                <option value="">domingo</option>
+           
+            <select onChange={(e)=>dispatchDayGomon(e.target.value)} >
+                <option value="martes">martes</option>
+                <option value="miercoles">miercoles</option>
+                <option value="jueves">jueves</option>
+                <option value="viernes">viernes</option>
+                <option value="sabado">sabado</option>
+                <option value="domingo">domingo</option>
             </select>
             </div>
         </header>
