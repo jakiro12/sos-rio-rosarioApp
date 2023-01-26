@@ -1,7 +1,10 @@
 import '../StylesComponents/ticketStyles.css';
 import { useState } from 'react';
 import { SelectPriceTicket } from '../Provider/userProvider';
+import { SelectStatusGomon } from "../Provider/userProvider"
+
 export default function TicketDay(){
+    const{hourSelectInGomon}=SelectStatusGomon()
     let animationBtn= document.querySelector('.timebtn')
     const[oneDay,setOneDay]=useState(true)
     const[fifteenDays,setFifteenDays]=useState(false)
@@ -51,7 +54,7 @@ export default function TicketDay(){
                 <div className='price-station'>
                     <div>
                         <p className='open-time'>
-                           Abierto Mar-Dom de 8 hrs a 18 hrs
+                           Su embarcacion zarpa a las: {hourSelectInGomon}
                         </p>
                         <div className='quantity-tickets'>
                            cantidad de tickets : <div>
