@@ -80,6 +80,7 @@ export default function FormValues(){
         navigate('/')
     }
     return(
+        <div className='content-form'>
         <form className="container" onSubmit={sendPersonalData}>
             <div className='input-content'>
                 <label htmlFor="" className='name-alert'>Nombre</label>
@@ -114,5 +115,6 @@ export default function FormValues(){
                 <button className='send-data' type="submit">Registrarse</button>
             </div>
         </form>
+        </div>
     )
 }

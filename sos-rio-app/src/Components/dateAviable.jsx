@@ -1,15 +1,19 @@
 import '../StylesComponents/ticketStyles.css';
 import { useState } from 'react';
 import { SelectPriceTicket } from '../Provider/userProvider';
-import { SelectStatusGomon } from "../Provider/userProvider"
+import { SelectStatusGomon,SelectStatusTracker,SelectStatusBanquito } from "../Provider/userProvider"
+
 
 export default function TicketDay(){
     const{hourSelectInGomon}=SelectStatusGomon()
+    const{hourSelectInTracker}=SelectStatusTracker()
+    const {hourSelectInBanquitoToGo,hourSelectInBanquitoToBack}=SelectStatusBanquito()
     let animationBtn= document.querySelector('.timebtn')
     const[oneDay,setOneDay]=useState(true)
     const[fifteenDays,setFifteenDays]=useState(false)
     const[amountTickets,setAmountTickets]=useState(1)
     const {ticketValue}=SelectPriceTicket()
+ 
     function ticketTimeSelected(){
         if(fifteenDays === false && oneDay === true){
         setOneDay(false)
@@ -23,7 +27,11 @@ export default function TicketDay(){
     }
     const today = new Date();
     const timeTakeIt=today.toLocaleDateString()
-   
+    function findSelectHour(){
+       let valuesInHours=[hourSelectInBanquitoToGo,hourSelectInGomon,hourSelectInTracker]
+       let findIt=valuesInHours.filter((e)=>e.length >1)
+       return findIt[0]
+    }
     return(
         <article className='ticket-cotainer'>
             <header className='top-decoration'>
@@ -54,7 +62,7 @@ export default function TicketDay(){
                 <div className='price-station'>
                     <div>
                         <p className='open-time'>
-                           Su embarcacion zarpa a las: {hourSelectInGomon}
+                           Su embarcacion zarpa a las: {findSelectHour()}
                         </p>
                         <div className='quantity-tickets'>
                            cantidad de tickets : <div>

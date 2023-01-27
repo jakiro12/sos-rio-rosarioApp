@@ -3,7 +3,7 @@ import '../StylesComponents/tourStyles.css'
 import { SelectStatusGomon } from "../Provider/userProvider"
 export default function DaysAndHoursGomon(){
     const navigate=useNavigate()
-    const today= new Date()
+    const today= new Date()//trae el dia actual
     const formatDay= new Intl.DateTimeFormat("es-ar",{
        weekday:'long'
     })
@@ -11,9 +11,9 @@ export default function DaysAndHoursGomon(){
     const actualDay=formatDay.format(today)
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
-
+   
     const dispatchDayGomon=(e)=>{
-        setDaySelectInGomon(e)
+        setDaySelectInGomon(e) // logica de los selects aqui :D
     }
     const  goTicket=()=>{
         let arrElementsVerify=Array.from(elementsCheck)
@@ -41,7 +41,7 @@ export default function DaysAndHoursGomon(){
           <div className="select-container-time">           
             <select onChange={(e)=>dispatchDayGomon(e.target.value)} >
                 <option value="martes" >martes</option>
-                <option value="miercoles"  >miercoles</option>
+                <option value="miercoles">miercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
                 <option value="sabado">sabado</option>
@@ -50,7 +50,7 @@ export default function DaysAndHoursGomon(){
             </div>
         </header>
         <main className='time-options-container'>
-            <div className="start">Horarios de partida
+            <div className="start">Horarios de partida 
                 <div><label htmlFor="" name='hourgomon'>10:15</label>
                     <input type="checkbox" name="timegomon"  />
                 </div>

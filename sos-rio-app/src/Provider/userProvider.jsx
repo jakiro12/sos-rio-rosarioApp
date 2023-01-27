@@ -36,7 +36,7 @@ export function UserProvider({children}){
                     <trackerStatusContext.Provider value={{daySelectInTracker,setDaySelectInTracker,hourSelectInTracker,setHourSelectInTracker}}>
                         <banquitoStatusContext.Provider value={{daySelectInBanquito,setDaySelectInBanquito,hourSelectInBanquitoToGo,setHourSelectInBanquitoToGo,hourSelectInBanquitoToBack,setHourSelectInBanquitoToBack}}>
             {children}
-            </banquitoStatusContext.Provider>
+                        </banquitoStatusContext.Provider>
                      </trackerStatusContext.Provider>
                 </gomonStatusContext.Provider>
             </priceTicketContext.Provider>

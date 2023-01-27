@@ -1,3 +1,11 @@
+.content-form{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../svgLogos/fondo.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 .container{
     height: 80%;
     width: min(450px,90%);
@@ -36,7 +44,7 @@
 }
 .lastname-alert::after{
     visibility: var(--activation);
-    content: '*apellido invalido';
+    content: 'apellido invalido';
     font-weight: 700;
     text-align: center;
     width: 150px;
