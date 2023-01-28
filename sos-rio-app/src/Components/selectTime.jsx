@@ -6,7 +6,27 @@ export default function TimeAndDayTakeIt(){
     const {setDaySelectInBanquito,setHourSelectInBanquitoToGo,setHourSelectInBanquitoToBack} =SelectStatusBanquito()
     const getInputsToGo=document.getElementsByName('banquitogo')
     const getInputsToBack=document.getElementsByName('banquitoback')
-    
+    const getTimeTogoArrive=document.getElementsByName('banquitotimego')
+    const goToTakeTheTicket=()=>{
+        let checkedInputsToGo=Array.from(getInputsToGo)
+        let verifyBooleanValues=checkedInputsToGo.filter((e)=>e.checked === true)
+        let checkedInputsToBack=Array.from(getInputsToBack)
+        let verifyBooleanValuesToBack=checkedInputsToBack.filter((e)=>e.checked === true)
+        if(verifyBooleanValues.length === 0 || verifyBooleanValues.length > 1){
+            let selectedAlert=document.querySelector('.start')
+            selectedAlert.style.border='4px solid red'
+            selectedAlert.setAttribute('msg','Seleccione solo un horario')
+            console.log(verifyBooleanValues)
+        }else{
+            let hoursOfArrive=Array.from(getTimeTogoArrive)
+            let position = checkedInputsToGo.findIndex((e)=>e ===verifyBooleanValues[0])
+            setHourSelectInBanquitoToGo(hoursOfArrive[position].textContent)
+            let selectedAlert=document.querySelector('.start')
+            selectedAlert.style.border=''
+            selectedAlert.removeAttribute('msg')
+          //  navigate('/ticketoption')
+        }
+    }
     return(
         <article className='days-aviable-container'>
             <header className='title-days'>Seleccione un dia y hora disponibles
@@ -52,7 +72,7 @@ export default function TimeAndDayTakeIt(){
                 </div>
             </main>
             <footer>
-                <button className='time-check-btn' onClick={()=>navigate('/paradores')}>Confirmar</button>
+                <button className='time-check-btn' onClick={goToTakeTheTicket}>Confirmar</button>
             </footer>
         </article>
     )

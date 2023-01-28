@@ -14,7 +14,6 @@ export default function DaysAndHoursTracker(){
             let selectedAlert=document.querySelector('.start')
             selectedAlert.style.border='4px solid red'
             selectedAlert.setAttribute('msg','Seleccione solo un horario')
-            console.log(verifyBox)
         }else{
             let arrElements=Array.from(getCheckOfInputs)
             let arrHourElements=Array.from(getInputsTimeCheck)
