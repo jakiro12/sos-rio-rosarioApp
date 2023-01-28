@@ -12,19 +12,25 @@ export default function TimeAndDayTakeIt(){
         let verifyBooleanValues=checkedInputsToGo.filter((e)=>e.checked === true)
         let checkedInputsToBack=Array.from(getInputsToBack)
         let verifyBooleanValuesToBack=checkedInputsToBack.filter((e)=>e.checked === true)
-        if(verifyBooleanValues.length === 0 || verifyBooleanValues.length > 1){
+        if(verifyBooleanValues.length === 0 || verifyBooleanValues.length > 1 || verifyBooleanValuesToBack.length === 0 || verifyBooleanValuesToBack.length > 1){
             let selectedAlert=document.querySelector('.start')
             selectedAlert.style.border='4px solid red'
-            selectedAlert.setAttribute('msg','Seleccione solo un horario')
+            selectedAlert.setAttribute('msg','Elegir un horario')
+            let alertNoSelectBack=document.querySelector('.came-back')
+            alertNoSelectBack.style.border='4px solid red'
+            alertNoSelectBack.setAttribute('msg','Elegir un horario')
             console.log(verifyBooleanValues)
         }else{
             let hoursOfArrive=Array.from(getTimeTogoArrive)
             let position = checkedInputsToGo.findIndex((e)=>e ===verifyBooleanValues[0])
             setHourSelectInBanquitoToGo(hoursOfArrive[position].textContent)
             let selectedAlert=document.querySelector('.start')
+            let alertNoSelectBack=document.querySelector('.came-back')
             selectedAlert.style.border=''
             selectedAlert.removeAttribute('msg')
-          //  navigate('/ticketoption')
+            alertNoSelectBack.style.border=''
+            alertNoSelectBack.removeAttribute('msg')
+            navigate('/ticketoption')
         }
     }
     return(

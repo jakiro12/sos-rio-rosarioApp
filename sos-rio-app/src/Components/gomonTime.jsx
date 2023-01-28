@@ -11,9 +11,12 @@ export default function DaysAndHoursGomon(){
     const actualDay=formatDay.format(today)
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
-   
+    const optionsTags=document.querySelectorAll('option')
+    let arrOpt=Array.from(optionsTags)
     const dispatchDayGomon=(e)=>{
         setDaySelectInGomon(e) // logica de los selects aqui :D
+        console.log(actualDay === e) // verificar posicion dentro de un array
+      
     }
     const  goTicket=()=>{
         let arrElementsVerify=Array.from(elementsCheck)
@@ -38,13 +41,13 @@ export default function DaysAndHoursGomon(){
     return(
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
-          <div className="select-container-time">           
+          <div className="select-container-time">          
             <select onChange={(e)=>dispatchDayGomon(e.target.value)} >
-                <option value="martes" >martes</option>
-                <option value="miercoles">miercoles</option>
+                <option value="martes">martes</option>
+                <option value="míercoles">miercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
-                <option value="sabado">sabado</option>
+                <option value="sábado">sabado</option>
                 <option value="domingo">domingo</option>
             </select>
             </div>
