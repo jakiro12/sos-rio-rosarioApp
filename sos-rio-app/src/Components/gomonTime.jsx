@@ -11,12 +11,14 @@ export default function DaysAndHoursGomon(){
     const actualDay=formatDay.format(today)
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
-    const optionsTags=document.querySelectorAll('option')
-    let arrOpt=Array.from(optionsTags)
+    
     const dispatchDayGomon=(e)=>{
+        let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
         setDaySelectInGomon(e) // logica de los selects aqui :D
-        console.log(actualDay === e) // verificar posicion dentro de un array
-      
+        let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e)
+        let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
+        console.log(findPositonOfDaySelected) // verificar posicion dentro de un array
+        console.log(findPositionOfToday)
     }
     const  goTicket=()=>{
         let arrElementsVerify=Array.from(elementsCheck)
@@ -24,7 +26,7 @@ export default function DaysAndHoursGomon(){
         if(verifyBox.length === 0 || verifyBox.length > 1){
             let selectedAlert=document.querySelector('.start')
             selectedAlert.style.border='4px solid red'
-            selectedAlert.setAttribute('msg','Seleccione solo un horario')
+            selectedAlert.setAttribute('msg','Elija un horario')
             console.log(verifyBox)
         }else{
             let arrElements=Array.from(elementsCheck)
@@ -41,10 +43,10 @@ export default function DaysAndHoursGomon(){
     return(
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
-          <div className="select-container-time">          
+          <div className="select-container-time">       
             <select onChange={(e)=>dispatchDayGomon(e.target.value)} >
                 <option value="martes">martes</option>
-                <option value="míercoles">miercoles</option>
+                <option value="miércoles">miercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
                 <option value="sábado">sabado</option>

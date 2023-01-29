@@ -1,7 +1,6 @@
 .select-container-time{
     width: 50%;
     height: max-content;
-    font-size: 18px;
     margin-inline: auto;
     display: flex;
     position: relative;
@@ -25,7 +24,7 @@
     height: 100%;
     appearance: none;
    box-shadow: none;
-   font-size: 18px;
+   font-size: 22px;
    border: none;
    text-indent: 5%;
    background-color:#D6DBDD;
