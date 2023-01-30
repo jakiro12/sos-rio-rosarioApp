@@ -16,16 +16,23 @@ export default function DaysAndHoursGomon(){
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
     
+
     const dispatchDayGomon=(e)=>{
         let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
         let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e)
         let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
-        if(findPositonOfDaySelected < findPositionOfToday){
-            console.log('semana proxima')
-            console.log(timeTodayinHours)
-        }else{
-            setDaySelectInGomon(e) // logica de los selects aqui :D
+        let hoursCheckedForThisDay=Array.from(hourElements)
+        let finalPositon=hoursCheckedForThisDay.length - 1
 
+        if(actualDay === 'lunes'){
+            setDaySelectInGomon(e)
+            console.log('lunes')
+        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPositon].textContent < timeTodayinHours ){
+            setDaySelectInGomon(e) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
+        }else{
+            setDaySelectInGomon(e)
+            console.log('elige hoy')
         }
     }
     const  goTicket=()=>{
