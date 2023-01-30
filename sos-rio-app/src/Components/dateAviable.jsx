@@ -33,6 +33,7 @@ export default function TicketDay(){
        return findIt[0]
     }
     return(
+        <div className='content-form'>
         <article className='ticket-cotainer'>
             <header className='top-decoration'>
                 <div></div>
@@ -84,5 +85,6 @@ export default function TicketDay(){
                 <div></div>
             </footer>
         </article>
+        </div>
     )
 }

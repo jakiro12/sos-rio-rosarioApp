@@ -2,7 +2,7 @@
     height: 90%;
     width: min(450px,90%);
     display: grid;
-    background: white;
+    background: transparent;
     grid-template-rows: 10% 80% 10%;
 }
 .top-decoration{
@@ -21,7 +21,7 @@
     width: 17.8%;
     height: auto;
     border-radius: 0 0 10px 10px;
-    background-color: white;
+    background-color: black;
 }
 .bottom-decoration{
     background-color:  #182889;
@@ -38,7 +38,7 @@
 .bottom-decoration > div{
     width: 17.8%;
     height: auto;
-    background-color: white;
+    background-color: black;
     border-radius: 10px 10px 0 0 ;
 }
 .ticket-info{

@@ -6,7 +6,33 @@ export default function DaysAndHoursTracker(){
     const {setDaySelectInTracker,setHourSelectInTracker}=SelectStatusTracker()
     const getInputsTimeCheck=document.getElementsByName('hourtracker')
     const getCheckOfInputs=document.getElementsByName('checktracker')
-
+    const today= new Date()//trae el dia actual
+    const formatDay= new Intl.DateTimeFormat("es-ar",{
+       weekday:'long'
+    })
+    const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
+        timeStyle:'short'
+    })
+    const actualDay=formatDay.format(today)
+    const timeTodayinHours=formatTimeNow.format(today)
+    const dispatchDayInTracker=(e)=>{
+        let daySelectedByUser=e.target.value
+        let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
+        let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e.target.value)
+        let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
+        let hoursCheckedForThisDay=Array.from(getInputsTimeCheck)
+        let finalPosition=hoursCheckedForThisDay.length - 1
+        if(actualDay === 'lunes'){
+            setDaySelectInTracker(daySelectedByUser)
+            console.log(daySelectedByUser)
+        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+            setDaySelectInTracker(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
+        }else{
+            setDaySelectInTracker(daySelectedByUser)
+            console.log('elige hoy')
+        }
+    }
     const  goToSelectTicket=()=>{
         let arrElementsVerify=Array.from(getCheckOfInputs)
         let verifyBox= arrElementsVerify.filter((e)=> e.checked === true)        
@@ -30,12 +56,12 @@ export default function DaysAndHoursTracker(){
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
           <div className="select-container-time">
-            <select onChange={(e)=>setDaySelectInTracker(e.target.value)}>
+            <select onChange={dispatchDayInTracker}>
                 <option value="martes">martes</option>
-                <option value="miercoles">miercoles</option>
+                <option value="míercoles">miercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
-                <option value="sabado">sabado</option>
+                <option value="sábado">sabado</option>
                 <option value="domingo">domingo</option>
             </select>
             </div>

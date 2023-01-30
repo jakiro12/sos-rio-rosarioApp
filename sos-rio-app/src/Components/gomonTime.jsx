@@ -18,20 +18,21 @@ export default function DaysAndHoursGomon(){
     
 
     const dispatchDayGomon=(e)=>{
+        let daySelectedByUser=e.target.value
         let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
         let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e)
         let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
         let hoursCheckedForThisDay=Array.from(hourElements)
-        let finalPositon=hoursCheckedForThisDay.length - 1
+        let finalPosition=hoursCheckedForThisDay.length - 1
 
         if(actualDay === 'lunes'){
-            setDaySelectInGomon(e)
+            setDaySelectInGomon(daySelectedByUser)
             console.log('lunes')
-        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPositon].textContent < timeTodayinHours ){
-            setDaySelectInGomon(e) // sumarle 7 dias asi seria la semana que viene
+        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+            setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
             console.log('elige pa la semana que viene')
         }else{
-            setDaySelectInGomon(e)
+            setDaySelectInGomon(daySelectedByUser)
             console.log('elige hoy')
         }
     }
