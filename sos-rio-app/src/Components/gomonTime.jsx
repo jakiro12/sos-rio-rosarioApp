@@ -7,18 +7,26 @@ export default function DaysAndHoursGomon(){
     const formatDay= new Intl.DateTimeFormat("es-ar",{
        weekday:'long'
     })
+    const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
+        timeStyle:'short'
+    })
     const {setDaySelectInGomon,setHourSelectInGomon} = SelectStatusGomon()
     const actualDay=formatDay.format(today)
+    const timeTodayinHours=formatTimeNow.format(today)
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
     
     const dispatchDayGomon=(e)=>{
         let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
-        setDaySelectInGomon(e) // logica de los selects aqui :D
         let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e)
         let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
-        console.log(findPositonOfDaySelected) // verificar posicion dentro de un array
-        console.log(findPositionOfToday)
+        if(findPositonOfDaySelected < findPositionOfToday){
+            console.log('semana proxima')
+            console.log(timeTodayinHours)
+        }else{
+            setDaySelectInGomon(e) // logica de los selects aqui :D
+
+        }
     }
     const  goTicket=()=>{
         let arrElementsVerify=Array.from(elementsCheck)
