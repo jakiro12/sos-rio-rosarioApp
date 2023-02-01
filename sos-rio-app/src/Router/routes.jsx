@@ -6,6 +6,7 @@ import AllBoats from '../Components/navyPort';
 import TimeAndDayTakeIt from '../Components/selectTime';
 import Paradores from '../Components/spotsRosario';
 import DaysAndHoursTracker from '../Components/trackerTimes';
+import TerminalInfo from '../InfoAboutApp/aboutUs';
 import BoatDraw from '../LogosInCss/boat';
 import Home from '../Pages/Home'
 import MenuOption from '../Pages/Menu';
@@ -48,8 +49,11 @@ export const router= createBrowserRouter([
     },
     {
         path:'/checkturngomon',
-        element:<DaysAndHoursGomon/>
-        
+        element:<DaysAndHoursGomon/>  
+    },
+    {
+        path:'/informacion',
+        element:<TerminalInfo/>
     }
    
 ]);
