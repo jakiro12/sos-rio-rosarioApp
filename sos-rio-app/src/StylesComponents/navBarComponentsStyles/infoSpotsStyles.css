@@ -1,0 +1,17 @@
+.container-spots-info{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 40% 55%;
+}
+.image-content-spot{
+    width: auto;
+    height: 100%;
+    border: 2px solid black;
+}
+.image-content-spot > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
