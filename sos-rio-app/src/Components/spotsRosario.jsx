@@ -30,7 +30,7 @@ export default function Paradores(){
             <option value={JSON.stringify(imageUrls[2])} >Costa Alta</option>
             </select>
             </div>
-            <a href="#" onClick={()=>navigate('/ticketoption')}  className='cards'>
+            <article onClick={()=>navigate('/ticketoption')}  className='cards'>
                 
                 <div className='advantages'>
                     <span className='time-lapse'>
@@ -48,7 +48,7 @@ export default function Paradores(){
                 </div>
                 
                 
-            </a>
+            </article>
         </div>
     )
 }

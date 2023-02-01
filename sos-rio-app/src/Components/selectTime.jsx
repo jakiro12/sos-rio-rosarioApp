@@ -4,9 +4,38 @@ import { SelectStatusBanquito } from '../Provider/userProvider'
 export default function TimeAndDayTakeIt(){
     const navigate=useNavigate()
     const {setDaySelectInBanquito,setHourSelectInBanquitoToGo,setHourSelectInBanquitoToBack} =SelectStatusBanquito()
+    const today= new Date()//trae el dia actual
+    const formatDay= new Intl.DateTimeFormat("es-ar",{
+       weekday:'long'
+    })
+    const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
+        timeStyle:'short'
+    })
+    const actualDay=formatDay.format(today)
+    const timeTodayinHours=formatTimeNow.format(today)
     const getInputsToGo=document.getElementsByName('banquitogo')
     const getInputsToBack=document.getElementsByName('banquitoback')
     const getTimeTogoArrive=document.getElementsByName('banquitotimego')
+    const dispatchDayBanquito=(e)=>{
+        let daySelectedByUser=e.target.value
+        let arrDays=['martes','miércoles','jueves','viernes','sábado','domingo']
+        let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === daySelectedByUser)
+        let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
+        let hoursCheckedForThisDay=Array.from(getTimeTogoArrive)
+        let finalPosition=hoursCheckedForThisDay.length - 1
+       
+        if(actualDay === 'lunes'){
+            setDaySelectInBanquito(daySelectedByUser)
+            console.log('lunes')
+        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+            setDaySelectInBanquito(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
+          
+        }else{
+            setDaySelectInBanquito(daySelectedByUser)
+            console.log('elige hoy')
+        }
+    }
     const goToTakeTheTicket=()=>{
         let checkedInputsToGo=Array.from(getInputsToGo)
         let verifyBooleanValues=checkedInputsToGo.filter((e)=>e.checked === true)
@@ -30,19 +59,19 @@ export default function TimeAndDayTakeIt(){
             selectedAlert.removeAttribute('msg')
             alertNoSelectBack.style.border=''
             alertNoSelectBack.removeAttribute('msg')
-            navigate('/ticketoption')
+            navigate('/paradores')
         }
     }
     return(
         <article className='days-aviable-container'>
             <header className='title-days'>Seleccione un dia y hora disponibles
             <div className="select-container-time">           
-            <select onChange={(e)=>setDaySelectInBanquito(e.target.value)}>
+            <select onChange={dispatchDayBanquito}>
                 <option value="martes" >martes</option>
-                <option value="miercoles">miercoles</option>
+                <option value="miércoles">míercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
-                <option value="sabado">sabado</option>
+                <option value="sábado">sabado</option>
                 <option value="domingo">domingo</option>
             </select>
             </div>

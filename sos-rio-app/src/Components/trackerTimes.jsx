@@ -58,7 +58,7 @@ export default function DaysAndHoursTracker(){
           <div className="select-container-time">
             <select onChange={dispatchDayInTracker}>
                 <option value="martes">martes</option>
-                <option value="míercoles">miercoles</option>
+                <option value="miércoles">miercoles</option>
                 <option value="jueves">jueves</option>
                 <option value="viernes">viernes</option>
                 <option value="sábado">sabado</option>

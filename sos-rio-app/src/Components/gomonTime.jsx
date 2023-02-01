@@ -10,9 +10,9 @@ export default function DaysAndHoursGomon(){
     const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
         timeStyle:'short'
     })
-    const {setDaySelectInGomon,setHourSelectInGomon} = SelectStatusGomon()
     const actualDay=formatDay.format(today)
     const timeTodayinHours=formatTimeNow.format(today)
+    const {setDaySelectInGomon,setHourSelectInGomon} = SelectStatusGomon()
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
     
@@ -20,11 +20,11 @@ export default function DaysAndHoursGomon(){
     const dispatchDayGomon=(e)=>{
         let daySelectedByUser=e.target.value
         let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
-        let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === e)
+        let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === daySelectedByUser)
         let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
         let hoursCheckedForThisDay=Array.from(hourElements)
         let finalPosition=hoursCheckedForThisDay.length - 1
-
+        
         if(actualDay === 'lunes'){
             setDaySelectInGomon(daySelectedByUser)
             console.log('lunes')
@@ -60,7 +60,7 @@ export default function DaysAndHoursGomon(){
         <article className='days-aviable-container'>
         <header className='title-days'>Seleccione un dia y hora disponibles
           <div className="select-container-time">       
-            <select onChange={(e)=>dispatchDayGomon(e.target.value)} >
+            <select onChange={dispatchDayGomon} >
                 <option value="martes">martes</option>
                 <option value="miércoles">miercoles</option>
                 <option value="jueves">jueves</option>
