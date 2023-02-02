@@ -7,6 +7,7 @@ import TimeAndDayTakeIt from '../Components/selectTime';
 import Paradores from '../Components/spotsRosario';
 import DaysAndHoursTracker from '../Components/trackerTimes';
 import TerminalInfo from '../InfoAboutApp/aboutUs';
+import ServiceOfPort from '../InfoAboutApp/services';
 import InfoAboutSpots from '../InfoAboutApp/spotsInfo';
 import BoatDraw from '../LogosInCss/boat';
 import Home from '../Pages/Home'
@@ -59,6 +60,10 @@ export const router= createBrowserRouter([
     {
         path:'/infoparadores',
         element:<InfoAboutSpots/>
+    },
+    {
+        path:'/infoservicie',
+        element:<ServiceOfPort/>
     }
    
 ]);

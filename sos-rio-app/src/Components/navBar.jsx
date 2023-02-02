@@ -10,7 +10,7 @@ export default function NavBarOptions(){
           <p className='option' onClick={()=>navigate('/infoparadores')}>
             Paradores
           </p>
-          <p className='option'>
+          <p className='option'onClick={()=>navigate('/infoservicie')}>
             Servicios
           </p>
           <p className='option' onClick={()=>navigate('/informacion')}>
