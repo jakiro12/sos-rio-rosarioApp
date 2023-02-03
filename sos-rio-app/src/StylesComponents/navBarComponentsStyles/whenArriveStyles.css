@@ -1,0 +1,33 @@
+.when-arrive-container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5% 45% 50%;
+}
+.food-image-container{
+    height: 100%;
+    width: 100%;
+}
+.food-image-container > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.days-open{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  repeat(8,1fr);
+    padding: 3%;
+    height: 100%;
+    width: auto;
+    background:  #0855A0 ;
+    color: white;
+}
+.days-open > h2 {
+    margin-inline: auto;
+}
+.days-open > p{
+    font-size:  larger;
+    margin-inline: auto;
+}

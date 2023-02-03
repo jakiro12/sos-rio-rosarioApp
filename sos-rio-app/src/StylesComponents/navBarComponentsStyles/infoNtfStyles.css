@@ -21,7 +21,8 @@
     grid-template-rows: 0.2fr 0.8fr ;
     width: auto;
     height: 100%;
-    border: 3px solid blue;
+    background:  #0855A0 ;
+    color: white;
     padding: 4%;
 }
 .about-us > p{

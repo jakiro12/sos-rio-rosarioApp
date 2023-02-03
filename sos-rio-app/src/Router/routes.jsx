@@ -9,6 +9,7 @@ import DaysAndHoursTracker from '../Components/trackerTimes';
 import TerminalInfo from '../InfoAboutApp/aboutUs';
 import ServiceOfPort from '../InfoAboutApp/services';
 import InfoAboutSpots from '../InfoAboutApp/spotsInfo';
+import WhenWeArrive from '../InfoAboutApp/whenWeStart';
 import BoatDraw from '../LogosInCss/boat';
 import Home from '../Pages/Home'
 import MenuOption from '../Pages/Menu';
@@ -64,6 +65,10 @@ export const router= createBrowserRouter([
     {
         path:'/infoservicie',
         element:<ServiceOfPort/>
+    },
+    {
+        path:'/infocuando',
+        element:<WhenWeArrive/>
     }
    
 ]);

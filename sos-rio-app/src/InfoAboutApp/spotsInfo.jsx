@@ -8,7 +8,7 @@ export default function InfoAboutSpots(){
                 <img alt="foto de la playa" src={require('../svgLogos/playafondo.jpeg')} />
             </div>
             <article className="spots-travel">
-                <h2>Viaje a las Islas</h2>
+                <h2>Viajes a la Isla</h2>
                 <p><b>Garden Island</b>:
                     Situado en la costa de la playa, con apertura de viernes a domingo.
                     Playa artifical sobre el río con comodidades para disfrutar al aire libre, diversos espacios comunes y amenities de primer nivel.

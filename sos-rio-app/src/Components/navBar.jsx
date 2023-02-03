@@ -4,7 +4,7 @@ export default function NavBarOptions(){
   const navigate=useNavigate()
     return(
         <nav>
-          <p className='option'>
+          <p className='option' onClick={()=>navigate('/infocuando')}>
            Cuando
           </p>
           <p className='option' onClick={()=>navigate('/infoparadores')}>

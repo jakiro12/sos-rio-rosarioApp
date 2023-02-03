@@ -19,12 +19,24 @@
     width: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 15% 55% 30%;
     padding: 3%;
+    background:  #0855A0 ;
+    color: white;
 }
 .service-description > h2{
     margin: auto;
 }
 .service-description > p{
     margin: auto;
+    font-size: larger;
+}
+.service-description li{
+    font-size: larger;
+    list-style: inside;
+    margin-bottom: 5%;
+}
+.info-boats{
+    color: orangered;
+    font-size: larger;
 }

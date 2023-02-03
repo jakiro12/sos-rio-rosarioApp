@@ -22,7 +22,12 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     padding: 4%;
+    background:  #0855A0 ;
+    color: white;
 }
 .spots-travel p {
     font-size: larger;
+}
+.spots-travel > h2 {
+    margin-inline: auto;
 }
