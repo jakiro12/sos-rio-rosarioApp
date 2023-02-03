@@ -31,3 +31,13 @@
     font-size:  larger;
     margin-inline: auto;
 }
+.get-in{
+    width: min(450px,85%);
+    margin-inline: auto;
+    height: 100%;
+    font-size:  x-large;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(-45deg , #182889 80%, white);
+    border-radius:  25% 25% 25% 25% / 100% 100% 100% 100%;
+}

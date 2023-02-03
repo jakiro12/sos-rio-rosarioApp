@@ -17,7 +17,7 @@ export default function WhenWeArrive(){
                <p>Viernes: 10:00 hs - 20:00 hs</p>
                <p>Sabado: 10:00 hs - 20:00 hs</p>
                <p>Domingo: 10:00 hs - 20:00 hs</p>
-               <button onClick={()=>navigate('/')}>ingresar</button>
+               <button onClick={()=>navigate('/')} className='get-in'>inicio</button>
             </article>
         </div>
     )

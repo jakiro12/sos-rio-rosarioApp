@@ -76,8 +76,8 @@
     height: fit-content;
     border: 3px groove #182889;
     font-size: xx-large;
-    border-radius: 15px;
-    background: transparent;
+    border-radius:  25% 25% 25% 25% / 100% 100% 100% 100%;
+    background: linear-gradient(-45deg , #182889 80%, white);
     color: white;
     padding: 5%;
 }
