@@ -9,7 +9,7 @@ export default function MenuOption(){
         <div className='container-menu'>
             <button className='tickets-m-btn' onClick={()=>navigate('/shipping')}>Viajes y excursiones</button>
             <button className='food-m-btn' onClick={()=>openBarWeb()}>Gastronomia del Puerto</button>
-            <button className='emergency-m-btn'>Numeros de Emergencia y Auxilio</button>
+            <button className='emergency-m-btn'onClick={()=>navigate('/atencion')}>Numeros de Emergencia y Auxilio</button>
             <button className='promos-m-btn'>Promociones de temporada</button>
 
             </div>

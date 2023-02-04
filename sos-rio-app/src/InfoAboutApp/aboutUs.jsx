@@ -8,8 +8,13 @@ export default function TerminalInfo(){
            </div>
             <article className='about-us'>
                 <h2>SOS Rio App Web</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum debitis impedit, labore dolore beatae ratione sint quos sed sapiente dolores optio eligendi accusantium est iusto, officia odio. Aut, quisquam rerum.
-                    
+                <p>La aplicacion web permite a los viajeros planificar y
+                     reservar viajes y excursiones en bote desde el puerto de Rosario, Santa Fe. 
+                     Con una interfaz intuitiva y fácil de usar, los usuarios pueden explorar distintas opciones
+                      de itinerarios, comparar precios y características de los barcos disponibles, y realizar una
+                       reserva en tiempo real. La aplicación también ofrece información detallada sobre los destinos, 
+                       incluyendo descripciones de los lugares de interés, fotografías y recomendaciones. Con esta 
+                       aplicación, los viajeros pueden planificar su aventura en el río Paraná de manera fácil y eficiente.
                 </p>
             </article>
         </div>

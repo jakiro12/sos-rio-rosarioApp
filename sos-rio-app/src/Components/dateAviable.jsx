@@ -8,23 +8,28 @@ export default function TicketDay(){
     const{hourSelectInGomon}=SelectStatusGomon()
     const{hourSelectInTracker}=SelectStatusTracker()
     const {hourSelectInBanquitoToGo,hourSelectInBanquitoToBack}=SelectStatusBanquito()
-    let animationBtn= document.querySelector('.timebtn')
-    const[oneDay,setOneDay]=useState('Viaje sin reserva')
+    const[booking,setBooking]=useState('Viaje sin reserva')
     const[extrapay,setExtrapay]=useState(false)
+    const[plusBooking,setPlusBooking]=useState(0)
     const[amountTickets,setAmountTickets]=useState(1)
     const {ticketValue}=SelectPriceTicket()
- 
+   
     function ticketTimeSelected(){
-        if(extrapay === false){
-        setOneDay('Con reserva, adicional de 800$')
-        setExtrapay(true)
-        animationBtn.classList.toggle('movebtn')
-    }else{
-        setOneDay('Viaje sin reserva')
-        setExtrapay(false)
-        animationBtn.classList.toggle('movebtn')
-    }
-    }
+            let animationBtn= document.querySelector('.timebtn')
+            if(extrapay === false){
+            setBooking('Con reserva, adicional de 800$')
+            setExtrapay(true)
+            setPlusBooking(800)
+            animationBtn.classList.toggle('movebtn')
+        }else{
+            setBooking('Viaje sin reserva')
+            setExtrapay(false)
+            animationBtn.classList.toggle('movebtn')
+            setPlusBooking(0)
+        }
+        }
+     
+ 
     const today = new Date();
     const timeTakeIt=today.toLocaleDateString()
     function findSelectHour(){
@@ -56,7 +61,7 @@ export default function TicketDay(){
                     </div>
                     </div>
                     <div className='port-info'>
-                    <p>{oneDay}</p>
+                    <p>{booking}</p>
                     <p> {timeTakeIt} hasta las 16 horas</p>
                     </div>
                 </div>
@@ -74,7 +79,7 @@ export default function TicketDay(){
                            </div>
                         </div>
                        <div className='set-ticket'>
-                       <p>Precio:{amountTickets * ticketValue}$</p>
+                       <p>Precio:{amountTickets * ticketValue + plusBooking}$</p>
                        <button>Solicitar</button>
                         </div> 
                     </div>

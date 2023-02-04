@@ -3,6 +3,7 @@ import TicketDay from '../Components/dateAviable';
 import FormValues from '../Components/formData';
 import DaysAndHoursGomon from '../Components/gomonTime';
 import AllBoats from '../Components/navyPort';
+import CallHelpers from '../Components/numberEmergency/callHelp';
 import TimeAndDayTakeIt from '../Components/selectTime';
 import Paradores from '../Components/spotsRosario';
 import DaysAndHoursTracker from '../Components/trackerTimes';
@@ -69,6 +70,10 @@ export const router= createBrowserRouter([
     {
         path:'/infocuando',
         element:<WhenWeArrive/>
+    },
+    {
+        path:'/atencion',
+        element:<CallHelpers/>
     }
    
 ]);
