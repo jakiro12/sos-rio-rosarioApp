@@ -102,8 +102,9 @@
 }
 .head-info > p{
     margin-inline: auto;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
 }
 .day-info{
     display: grid;
@@ -154,6 +155,9 @@
     display: grid;
     height: 100%;
     width: 100%;
+}
+.port-info > p{
+    font-size: 20px;
 }
 .open-time{
     width: 100%;

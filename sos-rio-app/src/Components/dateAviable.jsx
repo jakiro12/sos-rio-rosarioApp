@@ -9,19 +9,19 @@ export default function TicketDay(){
     const{hourSelectInTracker}=SelectStatusTracker()
     const {hourSelectInBanquitoToGo,hourSelectInBanquitoToBack}=SelectStatusBanquito()
     let animationBtn= document.querySelector('.timebtn')
-    const[oneDay,setOneDay]=useState(true)
-    const[fifteenDays,setFifteenDays]=useState(false)
+    const[oneDay,setOneDay]=useState('Viaje sin reserva')
+    const[extrapay,setExtrapay]=useState(false)
     const[amountTickets,setAmountTickets]=useState(1)
     const {ticketValue}=SelectPriceTicket()
  
     function ticketTimeSelected(){
-        if(fifteenDays === false && oneDay === true){
-        setOneDay(false)
-        setFifteenDays(true)
+        if(extrapay === false){
+        setOneDay('Con reserva, adicional de 800$')
+        setExtrapay(true)
         animationBtn.classList.toggle('movebtn')
     }else{
-        setOneDay(true)
-        setFifteenDays(false)
+        setOneDay('Viaje sin reserva')
+        setExtrapay(false)
         animationBtn.classList.toggle('movebtn')
     }
     }
@@ -56,7 +56,7 @@ export default function TicketDay(){
                     </div>
                     </div>
                     <div className='port-info'>
-                    <p>Vigencia del ticket</p>
+                    <p>{oneDay}</p>
                     <p> {timeTakeIt} hasta las 16 horas</p>
                     </div>
                 </div>
