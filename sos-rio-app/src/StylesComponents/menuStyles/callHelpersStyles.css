@@ -3,7 +3,10 @@
     width: 100vw;
     height: 100vh;
     background:  #0855A0 ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
+
 .number-types{
     width: min(600px, 85%);
     margin: auto;
@@ -20,16 +23,25 @@
     margin: auto;
     font-size: xx-large;
     border-bottom: 2px solid black;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
 }
 .copy-number{
     margin-left:10% ;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    background-image: url('../../svgLogos/phone-call.svg');
+    background-size: cover;
 }
 .name-phone{
     margin-inline:auto ;
     color: white;
-    height: fit-content;
+
     
 }
+
 .number-link:link{
     text-decoration: none;
     color: white;

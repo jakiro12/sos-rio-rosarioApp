@@ -13,28 +13,28 @@ export default function CallHelpers(){
           <p className='name-phone'>Prefectura</p>
           <div className='info-number'> 
             <a href='tel:3424420130' className='number-link' >Escribir telefono</a>
-           <button className='copy-number' onClick={copiar}>C</button>
+           <button className='copy-number' onClick={copiar}></button>
            </div>
         </div>
         <div className='categorie-phone'>
           <p className='name-phone'>Prefectura</p>
           <div className='info-number'> 
             <a href='tel:3424420130' className='number-link' >3424420130</a>
-            <button className='copy-number' onClick={copiar}>C</button>
+            <button className='copy-number' onClick={copiar}></button>
            </div>
         </div>
         <div className='categorie-phone'>
           <p className='name-phone'>Prefectura</p>
           <div className='info-number'> 
             <a href='tel:3424420130' className='number-link' >3424420130</a>
-            <button className='copy-number' onClick={copiar}>C</button>
+            <button className='copy-number' onClick={copiar}></button>
            </div>
         </div>
         <div className='categorie-phone'>
           <p className='name-phone'>Prefectura</p>
           <div className='info-number'> 
             <a href='tel:3424420130' className='number-link' >3424420130</a>
-            <button className='copy-number' onClick={copiar}>C</button>
+            <button className='copy-number' onClick={copiar}></button>
            </div>
         </div>
     
