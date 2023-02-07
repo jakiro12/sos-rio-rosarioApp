@@ -27,10 +27,12 @@ export default function TimeAndDayTakeIt(){
         if(actualDay === 'lunes'){
             setDaySelectInBanquito(daySelectedByUser)
             console.log('lunes')
-        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+        }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
             setDaySelectInBanquito(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
             console.log('elige pa la semana que viene')
-          
+        }else if(findPositionOfToday > findPositonOfDaySelected){
+            setDaySelectInBanquito(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
         }else{
             setDaySelectInBanquito(daySelectedByUser)
             console.log('elige hoy')

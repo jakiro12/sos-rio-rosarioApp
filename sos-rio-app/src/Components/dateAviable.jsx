@@ -17,12 +17,12 @@ export default function TicketDay(){
     function ticketTimeSelected(){
             let animationBtn= document.querySelector('.timebtn')
             if(extrapay === false){
-            setBooking('Con reserva, adicional de 800$')
+            setBooking('Adicional de 800$')
             setExtrapay(true)
             setPlusBooking(800)
             animationBtn.classList.toggle('movebtn')
         }else{
-            setBooking('Viaje sin reserva')
+            setBooking('Sin recargo')
             setExtrapay(false)
             animationBtn.classList.toggle('movebtn')
             setPlusBooking(0)

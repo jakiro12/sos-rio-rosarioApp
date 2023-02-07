@@ -25,7 +25,10 @@ export default function DaysAndHoursTracker(){
         if(actualDay === 'lunes'){
             setDaySelectInTracker(daySelectedByUser)
             console.log(daySelectedByUser)
-        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+        }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+            setDaySelectInTracker(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
+        }else if(findPositionOfToday > findPositonOfDaySelected){
             setDaySelectInTracker(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
             console.log('elige pa la semana que viene')
         }else{

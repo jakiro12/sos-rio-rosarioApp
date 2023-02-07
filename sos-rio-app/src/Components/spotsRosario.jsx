@@ -26,7 +26,7 @@ export default function Paradores(){
             <select name="spots"  onChange={(e)=>changeSpot(e.target.value)}>
             <option value={JSON.stringify(imageUrls[2])}  >Garden Island</option>
             <option value={JSON.stringify(imageUrls[1])}  >El Pimpollal</option>
-            <option value={JSON.stringify(imageUrls[0])} selected >Los Marinos</option>
+            <option value={JSON.stringify(imageUrls[0])}  >Los Marinos</option>
             <option value={JSON.stringify(imageUrls[2])} >Costa Alta</option>
             </select>
             </div>
