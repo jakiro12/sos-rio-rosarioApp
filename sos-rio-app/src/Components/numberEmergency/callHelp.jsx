@@ -4,7 +4,6 @@ export default function CallHelpers(){
    async function copiar(){
       let textToCopy=document.querySelector('.number-link').textContent
      await navigator.clipboard.writeText(textToCopy)
-      console.log(textToCopy)
    }
     return(
     <article className='number-container'>
@@ -12,7 +11,7 @@ export default function CallHelpers(){
         <div className='categorie-phone'>
           <p className='name-phone'>Prefectura</p>
           <div className='info-number'> 
-            <a href='tel:3424420130' className='number-link' >Escribir telefono</a>
+            <a href='tel:911' className='number-link' >Escribir telefono</a>
            <button className='copy-number' onClick={copiar}></button>
            </div>
         </div>
