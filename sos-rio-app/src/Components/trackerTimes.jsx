@@ -54,7 +54,7 @@ export default function DaysAndHoursTracker(){
     }
     return(
         <article className='days-aviable-container'>
-        <header className='title-days'>Seleccione un dia y hora disponibles
+        <header className='title-days'>Seleccione un dia y horario
           <div className="select-container-time">
             <select onChange={dispatchDayInTracker}>
                 <option value="martes">martes</option>

@@ -28,7 +28,10 @@ export default function DaysAndHoursGomon(){
         if(actualDay === 'lunes'){
             setDaySelectInGomon(daySelectedByUser)
             console.log('lunes')
-        }else if(findPositionOfToday > findPositonOfDaySelected || hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+        }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
+            setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+            console.log('elige pa la semana que viene')
+        }else if(findPositionOfToday > findPositonOfDaySelected){
             setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
             console.log('elige pa la semana que viene')
         }else{
@@ -43,7 +46,6 @@ export default function DaysAndHoursGomon(){
             let selectedAlert=document.querySelector('.start')
             selectedAlert.style.border='4px solid red'
             selectedAlert.setAttribute('msg','Elija un horario')
-            console.log(verifyBox)
         }else{
             let arrElements=Array.from(elementsCheck)
             let arrHourElements=Array.from(hourElements)
@@ -58,7 +60,7 @@ export default function DaysAndHoursGomon(){
     }
     return(
         <article className='days-aviable-container'>
-        <header className='title-days'>Seleccione un dia y hora disponibles
+        <header className='title-days'>Seleccione un dia y horario
           <div className="select-container-time">       
             <select onChange={dispatchDayGomon} >
                 <option value="martes">martes</option>
