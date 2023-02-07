@@ -8,7 +8,6 @@
 .image-content-spot{
     width: auto;
     height: 100%;
-    border: 2px solid black;
 }
 .image-content-spot > img {
     width: 100%;
