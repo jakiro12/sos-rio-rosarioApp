@@ -99,5 +99,9 @@
 .linked{
     text-decoration: none;
     color: black;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
 }
 

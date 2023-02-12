@@ -1,13 +1,12 @@
 import '../StylesComponents/ticketStyles.css';
 import { useState } from 'react';
-import { SelectPriceTicket } from '../Provider/userProvider';
-import { SelectStatusGomon,SelectStatusTracker,SelectStatusBanquito } from "../Provider/userProvider"
+import { SelectStatusGomon,SelectStatusTracker,SelectStatusBanquito, SelectPriceTicket } from "../Provider/userProvider"
 
 
 export default function TicketDay(){
-    const{hourSelectInGomon}=SelectStatusGomon()
-    const{hourSelectInTracker}=SelectStatusTracker()
-    const {hourSelectInBanquitoToGo,hourSelectInBanquitoToBack}=SelectStatusBanquito()
+    const{hourSelectInGomon,daySelectInGomon}=SelectStatusGomon()
+    const{hourSelectInTracker,daySelectInTracker}=SelectStatusTracker()
+    const{hourSelectInBanquitoToGo,daySelectInBanquito}=SelectStatusBanquito()
     const[booking,setBooking]=useState('Viaje sin reserva')
     const[extrapay,setExtrapay]=useState(false)
     const[plusBooking,setPlusBooking]=useState(0)
@@ -29,13 +28,15 @@ export default function TicketDay(){
         }
         }
      
- 
-    const today = new Date();
-    const timeTakeIt=today.toLocaleDateString()
     function findSelectHour(){
        let valuesInHours=[hourSelectInBanquitoToGo,hourSelectInGomon,hourSelectInTracker]
        let findIt=valuesInHours.filter((e)=>e.length >1)
        return findIt[0]
+    }
+    function findDaySelectedByUser(){
+        let valuesInDays=[daySelectInBanquito,daySelectInGomon,daySelectInTracker]
+        let findTheDay=valuesInDays.filter((e)=>e.length > 1)
+        return findTheDay[0]
     }
     return(
         <div className='content-form'>
@@ -43,6 +44,7 @@ export default function TicketDay(){
             <header className='top-decoration'>
                 <div></div>
             </header>
+            
             <main className='ticket-info'>
                 <h3 className='terminal'>NTF</h3>
                 <div className='info-display'>
@@ -62,7 +64,7 @@ export default function TicketDay(){
                     </div>
                     <div className='port-info'>
                     <p>{booking}</p>
-                    <p> {timeTakeIt} hasta las 16 horas</p>
+                    <p>  Reserva para el dia:{findDaySelectedByUser()}</p>
                     </div>
                 </div>
                 <div className='price-station'>

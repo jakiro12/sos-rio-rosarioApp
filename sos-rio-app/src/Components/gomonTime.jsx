@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom"
 import '../StylesComponents/tourStyles.css'
 import { SelectStatusGomon } from "../Provider/userProvider"
+import { useEffect } from "react"
 export default function DaysAndHoursGomon(){
     const navigate=useNavigate()
-    const today= new Date()//trae el dia actual
+    const today= new Date()
     const formatDay= new Intl.DateTimeFormat("es-ar",{
        weekday:'long'
     })
@@ -15,8 +16,15 @@ export default function DaysAndHoursGomon(){
     const {setDaySelectInGomon,setHourSelectInGomon} = SelectStatusGomon()
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
-    
-
+  
+    useEffect(()=>{
+    let date=new Date()
+    const anotherDay=(date,period)=>{
+        date.setDate(date.getDate() + period)
+    }
+    anotherDay(date, 7)
+    console.log(date)
+    })
     const dispatchDayGomon=(e)=>{
         let daySelectedByUser=e.target.value
         let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
@@ -28,15 +36,19 @@ export default function DaysAndHoursGomon(){
         if(actualDay === 'lunes'){
             setDaySelectInGomon(daySelectedByUser)
             console.log('lunes')
+          
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
             setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
+        
             console.log('elige pa la semana que viene')
         }else if(findPositionOfToday > findPositonOfDaySelected){
             setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
             console.log('elige pa la semana que viene')
+           
         }else{
             setDaySelectInGomon(daySelectedByUser)
-            console.log('elige hoy')
+ 
+            console.log('elige hoy u esta semana')
         }
     }
     const  goTicket=()=>{

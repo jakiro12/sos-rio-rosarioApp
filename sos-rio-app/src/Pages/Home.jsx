@@ -30,8 +30,8 @@ const[userPassword,setUserPassword]=useState('')
                 </form>
             </main>
             <footer>
-                <a href='http://localhost:3000/formdata' className='linked'>Crear cuenta</a>
-                <a href='#' className='linked'>Olvidaste la contraseña?</a>
+                <button onClick={()=>navigate("/formdata")} className='linked'>Crear cuenta</button>
+                <button className='linked'>Recuperar contraseña</button>
             </footer>
         </article>
         </div>
