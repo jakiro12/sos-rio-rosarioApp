@@ -31,12 +31,12 @@ export default function DaysAndHoursGomon(){
     },[daysToAdd])
     const dispatchDayGomon=(e)=>{
         let daySelectedByUser=e.target.value
-        let arrDays=['martes','miércoles','jueves','viernes','sabado','domingo']
+        let arrDays=['martes','miércoles','jueves','viernes','sábado','domingo']
         let findPositonOfDaySelected =arrDays.findIndex((day)=> day  === daySelectedByUser)
         let findPositionOfToday=arrDays.findIndex((day)=>day === actualDay)
         let hoursCheckedForThisDay=Array.from(hourElements)
         let finalPosition=hoursCheckedForThisDay.length - 1
-        const allDayOfWeekNow=['lunes','martes','miércoles','jueves','viernes','sabado','domingo']
+        const allDayOfWeekNow=['lunes','martes','miércoles','jueves','viernes','sábado','domingo']
         let positionForSelection=allDayOfWeekNow.findIndex((e)=> e === daySelectedByUser) + 1
         let findDayOfTheWeekNow=allDayOfWeekNow.findIndex((e)=> e === actualDay) + 1
         
@@ -45,17 +45,17 @@ export default function DaysAndHoursGomon(){
             setDaysToAdd(positionForSelection)
             console.log('estas seleccionando un dia lunes')
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
-            setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
-            setDaysToAdd(7)
+            setDaySelectInGomon(daySelectedByUser) // elije para la otra sema
+            setDaysToAdd(7) // esta eligiendo mas tarde de la ultima hora
             console.log('elige hoy,pero pa la semana que viene')
         }else if(findPositionOfToday > findPositonOfDaySelected){
-            setDaySelectInGomon(daySelectedByUser) // sumarle 7 dias asi seria la semana que viene
-            let newDays= allDayOfWeekNow.length - (findDayOfTheWeekNow - positionForSelection)
+            setDaySelectInGomon(daySelectedByUser) 
+            let newDays= allDayOfWeekNow.length - ( findDayOfTheWeekNow -positionForSelection  ) // dias que faltan para llegar
             setDaysToAdd(newDays)
             console.log('elige pa la semana con resta')           
         }else{
             setDaySelectInGomon(daySelectedByUser)
-            setDaysToAdd(findPositonOfDaySelected)
+            setDaysToAdd(positionForSelection - findDayOfTheWeekNow)
             console.log('elige hoy u esta semana')
         }
     }
