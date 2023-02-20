@@ -26,8 +26,6 @@ export default function DaysAndHoursGomon(){
     }
     anotherDay(date, daysToAdd)
     console.log(date)
-   
-   
     },[daysToAdd])
     const dispatchDayGomon=(e)=>{
         let daySelectedByUser=e.target.value
@@ -42,7 +40,7 @@ export default function DaysAndHoursGomon(){
         
         if(actualDay === 'lunes'){
             setDaySelectInGomon(daySelectedByUser)
-            setDaysToAdd(positionForSelection)
+            setDaysToAdd(positionForSelection - 1)
             console.log('estas seleccionando un dia lunes')
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
             setDaySelectInGomon(daySelectedByUser) // elije para la otra sema
