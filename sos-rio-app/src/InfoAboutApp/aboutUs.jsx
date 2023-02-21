@@ -8,7 +8,7 @@ export default function TerminalInfo(){
            </div>
             <article className='about-us'>
                 <h2>SOS Rio App Web</h2>
-                <p>La aplicacion web permite a los viajeros planificar y
+                <p>La aplicacion web permite a los viajeros planificar,
                      reservar viajes y excursiones en bote desde el puerto de Rosario, Santa Fe. 
                      Con una interfaz intuitiva y fácil de usar, los usuarios pueden explorar distintas opciones
                       de itinerarios, comparar precios y características de los barcos disponibles, y realizar una

@@ -19,7 +19,7 @@
     width: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 15% 55% 30%;
+    grid-template-rows: 10% 50% 40%;
     padding: 3%;
     background:  #0855A0 ;
     color: white;
@@ -34,7 +34,7 @@
 .service-description li{
     font-size: larger;
     list-style: inside;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 .info-boats{
     color: orangered;
