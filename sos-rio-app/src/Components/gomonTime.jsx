@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import '../StylesComponents/tourStyles.css'
-import { SelectStatusGomon } from "../Provider/userProvider"
+import { SelectStatusGomon,SelectDayOfToWeek } from "../Provider/userProvider"
 import { useEffect,useState } from "react"
 export default function DaysAndHoursGomon(){
     const[daysToAdd,setDaysToAdd]=useState(0)
     const navigate=useNavigate()
+    const {setDayOfTheWeek}=SelectDayOfToWeek()    
     const today= new Date()
     const formatDay= new Intl.DateTimeFormat("es-ar",{
        weekday:'long'
@@ -12,20 +13,25 @@ export default function DaysAndHoursGomon(){
     const formatTimeNow=new Intl.DateTimeFormat("es-ar",{
         timeStyle:'short'
     })
+   
     const actualDay=formatDay.format(today)
     const timeTodayinHours=formatTimeNow.format(today)
-    const {setDaySelectInGomon,setHourSelectInGomon} = SelectStatusGomon()
+    const {setHourSelectInGomon} = SelectStatusGomon()
     const hourElements=document.getElementsByName('hourgomon')
     const elementsCheck=document.getElementsByName('timegomon')
   
     useEffect(()=>{
-
-    let date=new Date()
+    const formatDateInNumbers=new Intl.DateTimeFormat("es-ar",{
+            dateStyle:'short'
+         })
+    let dateToArrive=new Date()
     const anotherDay=(date,period)=>{
         date.setDate(date.getDate() + period)
     }
-    anotherDay(date, daysToAdd)
-    console.log(date)
+    anotherDay(dateToArrive, daysToAdd)
+    let nameOfTheDayChoosen=formatDateInNumbers.format(dateToArrive)
+    setDayOfTheWeek(nameOfTheDayChoosen)
+    console.log(nameOfTheDayChoosen)
     },[daysToAdd])
     const dispatchDayGomon=(e)=>{
         let daySelectedByUser=e.target.value
@@ -39,20 +45,20 @@ export default function DaysAndHoursGomon(){
         let findDayOfTheWeekNow=allDayOfWeekNow.findIndex((e)=> e === actualDay) + 1
         
         if(actualDay === 'lunes'){
-            setDaySelectInGomon(daySelectedByUser)
+            
             setDaysToAdd(positionForSelection - 1)
             console.log('estas seleccionando un dia lunes')
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
-            setDaySelectInGomon(daySelectedByUser) // elije para la otra sema
+            // elije para la otra sema
             setDaysToAdd(7) // esta eligiendo mas tarde de la ultima hora
             console.log('elige hoy,pero pa la semana que viene')
         }else if(findPositionOfToday > findPositonOfDaySelected){
-            setDaySelectInGomon(daySelectedByUser) 
+            
             let newDays= allDayOfWeekNow.length - ( findDayOfTheWeekNow -positionForSelection  ) // dias que faltan para llegar
             setDaysToAdd(newDays)
             console.log('elige pa la semana con resta')           
         }else{
-            setDaySelectInGomon(daySelectedByUser)
+           
             setDaysToAdd(positionForSelection - findDayOfTheWeekNow)
             console.log('elige hoy u esta semana')
         }

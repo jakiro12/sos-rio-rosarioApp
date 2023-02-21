@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom"
 import '../StylesComponents/tourStyles.css'
 import { useState,useEffect } from "react"
-import { SelectStatusTracker } from "../Provider/userProvider"
+import { SelectStatusTracker,SelectDayOfToWeek } from "../Provider/userProvider"
 export default function DaysAndHoursTracker(){
+    const {setDayOfTheWeek}=SelectDayOfToWeek()    
     const[daysToAdd,setDaysToAdd]=useState(0)
     const navigate=useNavigate()
-    const {setDaySelectInTracker,setHourSelectInTracker}=SelectStatusTracker()
+    const {setHourSelectInTracker}=SelectStatusTracker()
     const getInputsTimeCheck=document.getElementsByName('hourtracker')
     const getCheckOfInputs=document.getElementsByName('checktracker')
     const today= new Date()//trae el dia actual
@@ -18,13 +19,16 @@ export default function DaysAndHoursTracker(){
     const actualDay=formatDay.format(today)
     const timeTodayinHours=formatTimeNow.format(today)
     useEffect(()=>{
-
-        let date=new Date()
+        const formatDateInNumbers=new Intl.DateTimeFormat("es-ar",{
+            dateStyle:'short'
+         })
+        let dateToArrive=new Date()
         const anotherDay=(date,period)=>{
             date.setDate(date.getDate() + period)
         }
-        anotherDay(date, daysToAdd)
-        console.log(date)
+        anotherDay(dateToArrive, daysToAdd)
+        let nameOfTheDayChoosen=formatDateInNumbers.format(dateToArrive)
+        setDayOfTheWeek(nameOfTheDayChoosen)
         },[daysToAdd])
     const dispatchDayInTracker=(e)=>{
         let daySelectedByUser=e.target.value
@@ -37,20 +41,17 @@ export default function DaysAndHoursTracker(){
         let positionForSelection=allDayOfWeekNow.findIndex((e)=> e === daySelectedByUser) + 1
         let findDayOfTheWeekNow=allDayOfWeekNow.findIndex((e)=> e === actualDay) + 1
         if(actualDay === 'lunes'){
-            setDaySelectInTracker(daySelectedByUser)
+            
             setDaysToAdd(positionForSelection - 1)
             console.log('eligiendo un lunes')
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
-            setDaySelectInTracker(daySelectedByUser) // si elige el mismo dia pero mas tarde
             setDaysToAdd(7)
             console.log('elige para hoy u la semana que viene')
         }else if(findPositionOfToday > findPositonOfDaySelected){
-            setDaySelectInTracker(daySelectedByUser) // sumar los dias que faltan 
             let newDays= allDayOfWeekNow.length - ( findDayOfTheWeekNow -positionForSelection  ) // dias que faltan para llegar
             setDaysToAdd(newDays)
             console.log('elige pa la semana que viene')
         }else{
-            setDaySelectInTracker(daySelectedByUser)
             setDaysToAdd(positionForSelection - findDayOfTheWeekNow)
             console.log('elige hoy u esta misma semana')
         }

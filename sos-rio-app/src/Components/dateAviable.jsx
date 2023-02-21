@@ -1,12 +1,13 @@
 import '../StylesComponents/ticketStyles.css';
 import { useState } from 'react';
-import { SelectStatusGomon,SelectStatusTracker,SelectStatusBanquito, SelectPriceTicket } from "../Provider/userProvider"
+import { SelectStatusGomon,SelectStatusTracker,SelectStatusBanquito, SelectPriceTicket,SelectDayOfToWeek } from "../Provider/userProvider"
 
 
 export default function TicketDay(){
-    const{hourSelectInGomon,daySelectInGomon}=SelectStatusGomon()
-    const{hourSelectInTracker,daySelectInTracker}=SelectStatusTracker()
-    const{hourSelectInBanquitoToGo,daySelectInBanquito}=SelectStatusBanquito()
+    const{hourSelectInGomon}=SelectStatusGomon()
+    const{hourSelectInTracker}=SelectStatusTracker()
+    const{hourSelectInBanquitoToGo}=SelectStatusBanquito()
+    const {dateOfTheWeek}=SelectDayOfToWeek()
     const[booking,setBooking]=useState('Viaje sin reserva')
     const[extrapay,setExtrapay]=useState(false)
     const[plusBooking,setPlusBooking]=useState(0)
@@ -33,11 +34,7 @@ export default function TicketDay(){
        let findIt=valuesInHours.filter((e)=>e.length >1)
        return findIt[0]
     }
-    function findDaySelectedByUser(){
-        let valuesInDays=[daySelectInBanquito,daySelectInGomon,daySelectInTracker]
-        let findTheDay=valuesInDays.filter((e)=>e.length > 1)
-        return findTheDay[0]
-    }
+
     return(
         <div className='content-form'>
         <article className='ticket-cotainer'>
@@ -64,7 +61,7 @@ export default function TicketDay(){
                     </div>
                     <div className='port-info'>
                     <p>{booking}</p>
-                    <p>  Reserva para el dia:{findDaySelectedByUser()}</p>
+                    <p>  Reserva para el dia: {dateOfTheWeek}</p>
                     </div>
                 </div>
                 <div className='price-station'>

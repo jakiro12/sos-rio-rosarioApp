@@ -57,7 +57,7 @@
 }
 .terminal{
     margin: auto;
-    font-size: 48px;
+    font-size: 4.5rem;
     font-family: monospace;
     color: red;
     -webkit-text-stroke-width: 1px;

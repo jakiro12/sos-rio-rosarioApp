@@ -19,29 +19,28 @@ export function SelectStatusTracker(){
 export function SelectStatusBanquito(){
     return useContext(banquitoStatusContext)
 }
-export function SelectDayToNextWeek(){
+export function SelectDayOfToWeek(){
     return useContext(setDayForNextWeekend)
 }
 export function UserProvider({children}){
     const[ticketValue,setTicketValue]=useState(0)
-    const[daySelectInGomon,setDaySelectInGomon]=useState('')
+
     const[hourSelectInGomon,setHourSelectInGomon]=useState('')
     const[daySelectInTracker,setDaySelectInTracker]=useState('')
     const[hourSelectInTracker,setHourSelectInTracker]=useState('')
     const[daySelectInBanquito,setDaySelectInBanquito]=useState('')
     const[hourSelectInBanquitoToGo,setHourSelectInBanquitoToGo]=useState('')
     const[hourSelectInBanquitoToBack,setHourSelectInBanquitoToBack]=useState('')
-    const dateForNextWeek=()=>{
+    const[dateOfTheWeek,setDayOfTheWeek]=useState('')
         
-        console.log('hor')
-    }
+   
     return(
       
             <priceTicketContext.Provider value={{ticketValue,setTicketValue}}>
-                <gomonStatusContext.Provider value={{daySelectInGomon,setDaySelectInGomon,setHourSelectInGomon,hourSelectInGomon}}>
+                <gomonStatusContext.Provider value={{setHourSelectInGomon,hourSelectInGomon}}>
                     <trackerStatusContext.Provider value={{daySelectInTracker,setDaySelectInTracker,hourSelectInTracker,setHourSelectInTracker}}>
                         <banquitoStatusContext.Provider value={{daySelectInBanquito,setDaySelectInBanquito,hourSelectInBanquitoToGo,setHourSelectInBanquitoToGo,hourSelectInBanquitoToBack,setHourSelectInBanquitoToBack}}>
-                            <setDayForNextWeekend.Provider value={{dateForNextWeek}}>
+                            <setDayForNextWeekend.Provider value={{dateOfTheWeek,setDayOfTheWeek}}>
             {children}
                             </setDayForNextWeekend.Provider>
                         </banquitoStatusContext.Provider>

@@ -1,11 +1,13 @@
 import '../StylesComponents/selectTimeStyles.css'
 import {useNavigate} from 'react-router-dom'
-import { SelectStatusBanquito } from '../Provider/userProvider'
+import { SelectStatusBanquito, SelectDayOfToWeek } from '../Provider/userProvider'
 import { useState,useEffect } from 'react'
 export default function TimeAndDayTakeIt(){
     const[daysToAdd,setDaysToAdd]=useState(0)
+    const {setDayOfTheWeek}=SelectDayOfToWeek()  
+
     const navigate=useNavigate()
-    const {setDaySelectInBanquito,setHourSelectInBanquitoToGo,setHourSelectInBanquitoToBack} =SelectStatusBanquito()
+    const {setHourSelectInBanquitoToGo,setHourSelectInBanquitoToBack} =SelectStatusBanquito()
     const today= new Date()//trae el dia actual
     const formatDay= new Intl.DateTimeFormat("es-ar",{
        weekday:'long'
@@ -19,14 +21,18 @@ export default function TimeAndDayTakeIt(){
     const getInputsToBack=document.getElementsByName('banquitoback')
     const getTimeTogoArrive=document.getElementsByName('banquitotimego')
     useEffect(()=>{
-
-        let date=new Date()
+        const formatDateInNumbers=new Intl.DateTimeFormat("es-ar",{
+            dateStyle:'short'
+         })
+        let dateToArrive=new Date()
         const anotherDay=(date,period)=>{
             date.setDate(date.getDate() + period)
         }
-        anotherDay(date, daysToAdd)
-        console.log(date)
+        anotherDay(dateToArrive, daysToAdd)
+        let nameOfTheDayChoosen=formatDateInNumbers.format(dateToArrive)
+        setDayOfTheWeek(nameOfTheDayChoosen)
         },[daysToAdd])
+        
     const dispatchDayBanquito=(e)=>{
         let daySelectedByUser=e.target.value
         let arrDays=['martes','miércoles','jueves','viernes','sábado','domingo']
@@ -38,20 +44,16 @@ export default function TimeAndDayTakeIt(){
         let positionForSelection=allDayOfWeekNow.findIndex((e)=> e === daySelectedByUser) + 1
         let findDayOfTheWeekNow=allDayOfWeekNow.findIndex((e)=> e === actualDay) + 1
         if(actualDay === 'lunes'){
-            setDaySelectInBanquito(daySelectedByUser)
             setDaysToAdd(positionForSelection - 1)
             console.log('Estas seleccionando un dia lunes')
         }else if(findPositionOfToday === findPositonOfDaySelected && hoursCheckedForThisDay[finalPosition].textContent < timeTodayinHours ){
-            setDaySelectInBanquito(daySelectedByUser) 
             setDaysToAdd(7)
             console.log('elige para hoy u la semana que viene')
         }else if(findPositionOfToday > findPositonOfDaySelected){
-            setDaySelectInBanquito(daySelectedByUser)
             let newDays= allDayOfWeekNow.length - ( findDayOfTheWeekNow -positionForSelection  ) // dias que faltan para llegar
             setDaysToAdd(newDays)
             console.log('elige pa la semana que viene')
         }else{
-            setDaySelectInBanquito(daySelectedByUser)
             setDaysToAdd(positionForSelection - findDayOfTheWeekNow)
             console.log('elige hoy u esta semana')
         }
