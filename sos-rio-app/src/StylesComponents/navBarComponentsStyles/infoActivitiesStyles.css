@@ -31,10 +31,15 @@
     margin: auto;
     font-size: larger;
 }
+.option-boats{
+    width: auto;
+    height: 80%;
+    margin-top: auto;
+}
 .service-description li{
     font-size: larger;
     list-style: inside;
-    margin-bottom: 3%;
+    margin-top: 3%;
 }
 .info-boats{
     color: orangered;
