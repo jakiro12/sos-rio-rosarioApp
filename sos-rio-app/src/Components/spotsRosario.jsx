@@ -27,7 +27,6 @@ export default function Paradores(){
             <option value={JSON.stringify(imageUrls[2])}  >Garden Island</option>
             <option value={JSON.stringify(imageUrls[1])}  >El Pimpollal</option>
             <option value={JSON.stringify(imageUrls[0])}  >Los Marinos</option>
-            <option value={JSON.stringify(imageUrls[2])} >Costa Alta</option>
             </select>
             </div>
             <article onClick={()=>navigate('/ticketoption')}  className='cards'>
