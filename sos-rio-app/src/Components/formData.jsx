@@ -1,7 +1,8 @@
 import '../StylesComponents/formStyles.css'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom'
 import { emailRegex,nameRegex,adressRegex,passRegex,phoneRegex } from '../Validators/validatorForm';
+import { supabase } from '../backend/client';
 export default function FormValues(){
     const[personalName,setPersonalName]=useState('')
     const[personalLastName,setPersonalLastName]=useState('')
@@ -9,9 +10,10 @@ export default function FormValues(){
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[phone,setPhone]=useState('')
-
+    const[permission,setPermission]=useState(false)
     const navigate=useNavigate()
-  
+    
+
     const dataCharged={
         userName:'',
         userLastName:'',
@@ -20,7 +22,29 @@ export default function FormValues(){
         userEmail:'',
         userPassword:''
     }
+    useEffect(()=>{
+        if(permission === true){ //se envia correctamente
+            const insertData=async()=>{  
+        const { data, error } = await supabase
+          .from('passenger_created')
+          .insert([
+            { name:personalName,
+            last_name:personalLastName,
+            adress_user:adress,
+            number_phone:phone,
+            email_user:email,
+            pp_user:password
+            }
+          ]) 
+          console.log(error,data)
+            }
+           
+            insertData()
+           navigate('/')
+        }
 
+    },[permission])
+    
     const alertInputName=document.querySelector('.name-alert')
     const alertInputLastName=document.querySelector('.lastname-alert')
     const alertInputAdress=document.querySelector('.adress-alert')
@@ -28,7 +52,7 @@ export default function FormValues(){
     const alertInputEmail=document.querySelector('.email-alert')
     const alertInputPass=document.querySelector('.pass-alert')
 
-    function sendPersonalData(e){
+   async function sendPersonalData(e){
         e.preventDefault()
       
         if(personalName.match(nameRegex)){
@@ -70,14 +94,11 @@ export default function FormValues(){
         if(password.match(passRegex)){
             dataCharged.userPassword=password
             alertInputPass.style.setProperty('--activation','hidden')
+            setPermission(true)
         }else{
             alertInputPass.style.setProperty('--activation','visible')
             return
         }
-        
-        console.log(dataCharged)
-
-        navigate('/')
     }
     return(
         <div className='content-form'>

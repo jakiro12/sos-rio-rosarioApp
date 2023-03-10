@@ -2,15 +2,19 @@ import '../StylesComponents/homeStyles.css'
 import BoatDraw from '../LogosInCss/boat'
 import NavBarOptions from '../Components/navBar'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState } from 'react';
 export default function Home(){
 const navigate=useNavigate()
 const[user,setUser]=useState('')
 const[userPassword,setUserPassword]=useState('')
 
-    function travel(e){
+
+
+function travel(e){
         e.preventDefault()
-        navigate('/options')
+         navigate('/options')
+    
+        
     }
     return(
         <div className='body-entry'>
