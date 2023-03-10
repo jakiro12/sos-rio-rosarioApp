@@ -38,7 +38,6 @@ export default function FormValues(){
           ]) 
           console.log(error,data)
             }
-           
             insertData()
            navigate('/')
         }
