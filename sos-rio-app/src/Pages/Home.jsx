@@ -2,17 +2,37 @@ import '../StylesComponents/homeStyles.css'
 import BoatDraw from '../LogosInCss/boat'
 import NavBarOptions from '../Components/navBar'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { supabase } from '../backend/client';
 export default function Home(){
 const navigate=useNavigate()
 const[user,setUser]=useState('')
 const[userPassword,setUserPassword]=useState('')
+const[allUsers,setAllUsers]=useState([])
 
-
-
+useEffect(()=>{
+    const getAllData=async()=>{
+        const { data, error } = await supabase
+      .from('passenger_created')
+      .select('email_user,pp_user')
+      console.log(data,error)
+      setAllUsers(data)
+      
+    }
+    getAllData()
+},[])
 function travel(e){
         e.preventDefault()
+        let findEmail=allUsers.filter((e)=> e.email_user === user)
+       console.log(userPassword)
+       console.log(findEmail[0].pp_user)
+        if(findEmail.length === 1 && findEmail[0].pp_user === userPassword){
+
          navigate('/options')
+        }else{
+            console.log('no existe u esta mas de una vez')
+        }
+
     
         
     }
