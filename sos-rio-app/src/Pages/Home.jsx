@@ -9,6 +9,7 @@ const navigate=useNavigate()
 const[user,setUser]=useState('')
 const[userPassword,setUserPassword]=useState('')
 const[allUsers,setAllUsers]=useState([])
+const tokenAuthQuery= localStorage.getItem('userAuthRio')
 
 useEffect(()=>{
     const getAllData=async()=>{
@@ -20,12 +21,17 @@ useEffect(()=>{
       
     }
     getAllData()
+         if(tokenAuthQuery){
+            setTimeout(
+                function(){
+           navigate('/options')
+                },2000
+            )
+         }
 },[])
-const tokenAuthQuery= localStorage.getItem('userAuthRio')
 function travel(e){
         e.preventDefault()
         let findEmail=allUsers.filter((e)=> e.email_user === user)
-         if(tokenAuthQuery)  navigate('/options')
         if(findEmail.length === 1 && findEmail[0].pp_user === userPassword){
             localStorage.setItem('userAuthRio',allUsers[0].v_t_user)
          navigate('/options')
