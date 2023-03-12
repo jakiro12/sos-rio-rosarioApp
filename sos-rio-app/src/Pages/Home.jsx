@@ -14,20 +14,20 @@ useEffect(()=>{
     const getAllData=async()=>{
         const { data, error } = await supabase
       .from('passenger_created')
-      .select('email_user,pp_user')
+      .select('email_user,pp_user,v_t_user')
       console.log(data,error)
       setAllUsers(data)
       
     }
     getAllData()
 },[])
+const tokenAuthQuery= localStorage.getItem('userAuthRio')
 function travel(e){
         e.preventDefault()
         let findEmail=allUsers.filter((e)=> e.email_user === user)
-       console.log(userPassword)
-       console.log(findEmail[0].pp_user)
+         if(tokenAuthQuery)  navigate('/options')
         if(findEmail.length === 1 && findEmail[0].pp_user === userPassword){
-
+            localStorage.setItem('userAuthRio',allUsers[0].v_t_user)
          navigate('/options')
         }else{
             console.log('no existe u esta mas de una vez')
